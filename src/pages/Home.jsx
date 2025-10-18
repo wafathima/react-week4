@@ -49,6 +49,8 @@ sort === "low-high"
                 <option value="Footwear">Footwear</option>
                 <option value="Clothing">Clothing</option>
                 <option value="Watch">Watch</option>
+                <option value="Specs">Specs</option>
+                <option value="Shirt">Shirt</option>
                 </select>
 
                 {/* {sort} */}

@@ -53,6 +53,12 @@
       "name": "wafa",
       "email": "wfa@gamil.com",
       "password": "fdhgfghj"
+    },
+    {
+      "id": "28dd",
+      "name": "wafa",
+      "email": "wafa@gmail.com",
+      "password": "hgjhjk"
     }
   ],
   "products": [
@@ -103,7 +109,7 @@
       "name": "Womens Vintage Watch",
       "category": "Watch",
       "price": 12000,
-      "image": "https://media.gucci.com/style/White_South_0_160_540x540/1441967433/404243_I86E0_8646_002_100_0000_Light.jpg"
+      "image": "https://www.fastrack.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dwb71aec5f/images/Fastrack/Catalog/FV60003WM01W_1.jpg?sw=360&sh=360"
     },
     {
       "id": "8",
@@ -111,6 +117,34 @@
       "category": "Watch",
       "price": 78900,
       "image": "https://i.pinimg.com/474x/61/c5/ee/61c5ee4630748d86307f7d0cdafd1c15.jpg"
+    },
+    {
+      "id": "9",
+      "name": "Navigator Frame Sunglasses",
+      "category": "Specs",
+      "price": 32000,
+      "image": "https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-golden-mask-sunglasses--Z1717U_PM2_Front%20view.png?wid=490&hei=490"
+    },
+    {
+      "id": "10",
+      "name": "Square-Frame Sunglasses",
+      "category": "Specs",
+      "price": 45000,
+      "image": "https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-1.1-evidence-sunglasses--Z1502E_PM2_Front%20view.png?wid=490&hei=490"
+    },
+    {
+      "id": "11",
+      "name": "Silk Shirt",
+      "category": "Shirt",
+      "price": 16590,
+      "image": "https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-printed-short-sleeved-silk-shirt--HRS99WNGM752_PM2_Front%20view.png?wid=490&hei=490"
+    },
+    {
+      "id": "12",
+      "name": "Womens Scarf Shirt",
+      "category": "Shirt",
+      "price": 69000,
+      "image": "https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-scarf-shirt--FTTO59A05001_PM2_Front%20view.png?wid=490&hei=490"
     }
   ],
   "orders": []
