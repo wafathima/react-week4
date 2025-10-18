@@ -64,7 +64,7 @@ function AuthPage(){
                  </button>
                 </form>
                 <p className="text-center mt-3 text-sm">
-                    {isLogin ? "No account" : "Have account?"}{""}
+                    {isLogin ? "No account?" : "Have account?"}{""}
                     <sapan 
                     className="text-blue-500 cursor-pointer"
                     onClick={()=>setIsLogin(!isLogin)}
