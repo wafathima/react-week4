@@ -26,14 +26,20 @@ sort === "low-high"
 );
     return(
         <div className="p-8 ">
-            {/* {header} */}
-            <h1 className="text-4xl sm:text-6xl font-bold mb-10 text-center text-red-900">L I O |Store</h1>
 
+            {/* {header} */}
+            <div className="bg-gray-100 w-full h-auto  shadow-lg ">
+            <h1 className="text-9xl sm:text-9xl font-bold mb-10 text-center text-red-900 ">L I O  <span className="text-blue-900 font-semibold ">Store</span></h1>
+             </div>
+
+             <hr/>
+
+             <div className="flex justify-between mb-9 mt-7">
+                
             {/* {filter&sortbar} */}
-            <div className="flex justify-center mb-8 gap-5  ">
-           
+            <div className="flex-justify-start">
                 <input
-                placeholder="find"
+                placeholder="What are you looking for?"
                 className="p-3 h-12 w-48 text-sm focus:outline-none border"
                 value={search}
                 onChange={(e)=>setSearch(e.target.value)}
@@ -62,8 +68,16 @@ sort === "low-high"
                     <option value="high-low">High-Low</option>
                     <option value="low-high">Low-High</option>
                 </select>
-            
+            </div>
+
+             {/* {button} */}
+             <div className="flex justify-end gap-5">
+             <button className="bg-red-900 text-white font-semibold py-3 px-10 rounded hover:bg-red-700 transation duration-300">Login</button> 
+             <button className="bg-blue-900 text-white font-semibold py-3 px-10 rounded hover:bg-blue-700 transation duration-300">Cart</button>
+             </div>
+
         </div>
+        
         <div className="grid grid-colos-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-auto max-auto ">
             {filtered.map((p)=>(
                 <div
