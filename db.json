@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "id": "f658",
+      "name": "wafa",
+      "email": "wafa@gmail.com",
+      "password": "123143"
+    },
+    {
+      "id": "e4b0",
+      "name": "wafa",
+      "email": "wafa@gmail.com",
+      "password": "gdkghfhj"
+    },
+    {
+      "id": "d1b5",
+      "name": "wafa",
+      "email": "wafa@gmail.com",
+      "password": "ghfhjghj"
+    },
+    {
+      "id": "79a4",
+      "name": "wafa",
+      "email": "wafa@gmail.com",
+      "password": "gfghhj"
+    },
+    {
+      "id": "ae71",
+      "name": "wafa",
+      "email": "wafa@gmail.com",
+      "password": "hgjhk"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "T-shirt",
+      "category": "Clothing",
+      "price": 6500,
+      "image": "https://media.gucci.com/style/DarkGray_Center_0_0_2400x2400/1492016422/440103_X3F05_1508_001_100_0000_Light-Washed-T-shirt-with-Gucci-logo.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Tote Bag",
+      "category": "Bag",
+      "price": 13200,
+      "image": "https://tse1.mm.bing.net/th/id/OIP.f-aPnIv2W5-7bMuWctRmEgHaIX?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": "3",
+      "name": "Shoes",
+      "category": "Footwear",
+      "price": 25900,
+      "image": "https://tse1.mm.bing.net/th/id/OIP.g36Hhp4Uu_ejPFcKIRBAngHaJ4?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": "4",
+      "name": "shirt",
+      "category": "Clothing",
+      "price": 67300,
+      "image": "https://tse2.mm.bing.net/th/id/OIP.ct209MgOWcC6ba09SEsBiAHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": "5",
+      "name": "Baguette Bag",
+      "category": "Bag",
+      "price": 56200,
+      "image": "https://th.bing.com/th/id/OIP.Od00eeeQGrU1mfW0h6x9fgHaHa?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": "6",
+      "name": "Leather Boots",
+      "category": "Footwear",
+      "price": 589900,
+      "image": "https://tse3.mm.bing.net/th/id/OIP.gF4HPx9pI6eM03ybFQI1CgHaHu?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+    }
+  ],
+  "orders": []
+}
