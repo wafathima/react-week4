@@ -3,17 +3,23 @@ import { addToCart} from "../cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 
 
-export default function ProductList({products}){
+export default function ProductList({products,searchTerm}){
     const dispatch = useDispatch();
     const user = useSelector(s=> s.auth.user);
     const navigate = useNavigate();
 
     const onAdd = (product) => {
       if(!user)  {
-        return navigate ("/auth");
+         navigate ("/auth");
+         return;
       }
       dispatch(addToCart(product))
     };
+     
+   const filteredProducts = searchTerm
+   ? products.filter((p)=>
+p.name.toLowerCase().includes(searchTerm.toLowerCase())
+):products;
     return (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {products.map(p=>(

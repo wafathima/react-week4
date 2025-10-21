@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API = "http://localhost:5001/products";
+// const API = "http://localhost:5001/products";
 
 export const fetchProducts = createAsyncThunk(
     "products/fetch",
     async () => {
-        const res = await axios.get(API);
+        const res = await axios.get("http://localhost:5001/products");
         return res.data;
     }
 );
@@ -16,8 +16,8 @@ const productslice = createSlice({
     initialState:{
         items:[],
         status:"idle",
-        error:null},
-    reducers:{},
+       
+    },
     extraReducers:(builder)=>{
         builder
         .addCase(fetchProducts.pending,(state)=>

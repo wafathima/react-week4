@@ -1,121 +1,67 @@
 {
   "users": [
-    {
-      "id": "0625",
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "4365567"
-    },
-    {
-      "id": "6a1b",
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "4365567"
-    },
-    {
-      "id": "8d68",
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "4365567"
-    },
-    {
-      "id": "f18a",
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "4365567"
-    },
-    {
-      "id": "d4d4",
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "4365567"
-    },
-    {
-      "id": "1163",
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "4365567"
-    },
-    {
-      "id": "c991",
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "345678"
-    },
-    {
-      "id": "7664",
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "123456789"
-    },
-    {
-      "id": "4436",
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "1245678"
-    }
   ],
   "products": [
     {
       "id": "1",
       "name": "Nike Air Force 1 Dance",
-      "category": "Women's Shoes",
+      "category": "Women",
       "price": 46500,
       "image": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/0c10070b-165e-4d8b-9695-4b32379a3836/W+AIR+FORCE+1+DANCE.png"
     },
     {
       "id": "2",
       "name": "Nike Cortez Leather SE",
-      "category": "Men's Shoes",
+      "category": "Men",
       "price": 67300,
       "image": "https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/4295c8c8-9c01-4823-b473-94d14418bec3/NIKE+CORTEZ+LTR+SE.png"
     },
     {
       "id": "3",
       "name": "Nike Killshot 2",
-      "category": "Men's Shoes",
+      "category": "Men",
       "price": 76590,
       "image": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/abf29e1c-cff0-44b3-a5f3-e6db9b5b7b6a/KILLSHOT+2.png"
     },
     {
       "id": "4",
       "name": "Speedcat Plus Quilted Sneakers",
-      "category": "Men's Shoes",
+      "category": "Men",
       "price": 109909,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403429/01/sv01/fnd/IND/fmt/png/Speedcat-Plus-Quilted-Sneakers"
     },
     {
       "id": "5",
       "name": "Speedcat Sneakers",
-      "category": "Men's Shoes",
+      "category": "Men",
       "price": 9999,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/406329/54/sv01/fnd/IND/fmt/png/Speedcat-Sneakers"
     },
     {
       "id": "6",
       "name": "Speedcat Lea Women's Sneakers",
-      "category": "Women's Shoes",
+      "category": "Women",
       "price": 9999,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/404390/01/sv01/fnd/IND/fmt/png/PUMA-x-ROS%C3%89-Speedcat-Lea-Women's-Sneakers"
     },
     {
       "id": "7",
       "name": "Speedcat Ballet Women's Metallic Shoes",
-      "category": "Women's Shoes",
+      "category": "Women",
       "price": 68999,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/401581/01/sv01/fnd/IND/fmt/png/Speedcat-Ballet-Women's-Metallic-Shoes"
     },
     {
       "id": "8",
       "name": "Speedcat Metallic Sneakers",
-      "category": "Men's Shoes",
+      "category": "Men",
       "price": 49900,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/403689/01/sv01/fnd/IND/fmt/png/Speedcat-Metallic-Sneakers"
     },
     {
       "id": "9",
       "name": "Speedcat Suede Cafe Women's Ballet Shoes",
-      "category": "Women's Shoes",
+      "category": "Women",
       "price": 12000,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_350,h_350/global/406758/02/sv01/fnd/IND/fmt/png/Speedcat-Suede-Cafe-Women's-Ballet-Shoes"
     },

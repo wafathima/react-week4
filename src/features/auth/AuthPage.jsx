@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {loginUser,registerUser} from "./authSlice"
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 
 export default function AuthPage(){
     const [isLogin, setIsLogin] = useState(true);
@@ -12,6 +12,8 @@ export default function AuthPage(){
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from || "/"
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
@@ -23,14 +25,14 @@ export default function AuthPage(){
             if(isLogin){
                 const resultAction = await dispatch(loginUser({email,password}));
                 if (loginUser.fulfilled.match(resultAction)){
-                    navigate("/home");
+                    navigate(from,{replace:true});
                 }else{
                     setMsg(resultAction.payload || "Login failed")
                 }
             }else{
                 const resultAction = await dispatch(registerUser({name,email,password}));
                 if (registerUser.fulfilled.match(resultAction)){
-                    navigate("/home")
+                    navigate(from ,{replace:true})
                 }else {
                     setMsg("Register failed")
                 }
