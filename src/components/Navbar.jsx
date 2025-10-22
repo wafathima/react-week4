@@ -1,7 +1,7 @@
 import { useSelector,useDispatch } from "react-redux";
 import { Link,useNavigate } from "react-router-dom";
 import {logout} from "../features/auth/authSlice";
-import {ShoppingCart} from "lucide-react";
+import {ShoppingCart,Search} from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar({onSearch}){
@@ -18,6 +18,12 @@ export default function Navbar({onSearch}){
         else navigate("/auth");
     };
     
+    const handleSearch = ()=>{
+        if(searchTerm.trim()){
+            navigate(`/shop?search=${searchTerm}`)
+            setTerm("");
+        }
+    }
 
     return (
     
@@ -39,13 +45,16 @@ export default function Navbar({onSearch}){
          </div>
 
            {/* {search} */}
+           <div className="flex items-center border">
+            <button onClick={handleSearch}><Search size={22}/></button>
             <input 
             type="text"
             placeholder="What are you looking for?"
             value={searchTerm}
             onChange={(e)=>setSearchTerm(e.target.value)}
-            className=" px-3 py-2 w-64 border "
+            className=" px-3 py-2 w-64 "
             /> 
+             </div>
 
          {/* {user login&logout} */}
          {user ?(

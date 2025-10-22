@@ -5,7 +5,7 @@ export default function CategoryGrid(){
     const navigate = useNavigate();
 
 const categories = [
-    {name:"Men", image:"https://chicagocitysports.com/cdn/shop/files/Men_s-PUMA-Suede-Classic-XXI-Shoes-Peacoat-Navy_37491504_08.jpg"},
+    {name:"Men", image:"https://static.pxlecdn.com/photos/580572425/medium/9a75397125822c96957d.jpg"},
      {name:"Women", image:"https://img01.ztat.net/article/spp-media-p1/347caa8e9ef64465bb44c1af82b2edc2/49360ac8555d4540a78047d5b64ae338.jpg?imwidth=762"},
       {name:"New Arrivals", image:"https://cdn.sanity.io/images/qa41whrn/prod/19da2b3bb88bee229893ec5ee82c0aa4444541c1-800x800.jpg"},
       {name:"Sports", image:"https://cdn.mos.cms.futurecdn.net/GRkHKErVf5VpAHfcDs4vg5-1280-80.jpg"}

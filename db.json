@@ -1,27 +1,33 @@
 {
   "users": [
+    {
+      "id": "0ee5",
+      "name": "wafa",
+      "email": "wafa@gmail.com",
+      "password": "12345678"
+    }
   ],
   "products": [
     {
       "id": "1",
-      "name": "Nike Air Force 1 Dance",
+      "name": "Palermo Club Vegas Leather Sneakers",
       "category": "Women",
-      "price": 46500,
-      "image": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/0c10070b-165e-4d8b-9695-4b32379a3836/W+AIR+FORCE+1+DANCE.png"
+      "price": 89990,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/404669/01/sv01/fnd/IND/fmt/png/Palermo-Club-Vegas-Leather-Sneakers"
     },
     {
       "id": "2",
-      "name": "Nike Cortez Leather SE",
+      "name": "Palermo Sneakers ",
       "category": "Men",
-      "price": 67300,
-      "image": "https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/4295c8c8-9c01-4823-b473-94d14418bec3/NIKE+CORTEZ+LTR+SE.png"
+      "price": 69900,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/396463/20/sv01/fnd/IND/fmt/png/Palermo-Sneakers"
     },
     {
       "id": "3",
-      "name": "Nike Killshot 2",
+      "name": "Palermo Classic Comfort Low Boot Sneakers",
       "category": "Men",
-      "price": 76590,
-      "image": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/abf29e1c-cff0-44b3-a5f3-e6db9b5b7b6a/KILLSHOT+2.png"
+      "price": 55990,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402693/05/sv01/fnd/IND/fmt/png/Palermo-Classic-Comfort-Low-Boot-Sneakers"
     },
     {
       "id": "4",
@@ -67,25 +73,166 @@
     },
     {
       "id": "10",
-      "name": "Smashic Comfort Casual Sneakers",
-      "category": "Footwear",
-      "price": 19299,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/394371/01/sv01/fnd/IND/fmt/png/Smashic-Comfort-Casual-Sneakers"
+      "name": "Scuderia Ferrari Palermo Sneakers",
+      "category": "Men",
+      "price": 7999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/308899/03/sv01/fnd/IND/fmt/png/Scuderia-Ferrari-Palermo-Sneakers"
     },
     {
       "id": "11",
-      "name": "Club Kayzer Superior Cushioning Casual Shoes",
-      "category": "Footwear",
-      "price": 23499,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/402603/02/sv01/fnd/IND/fmt/png/Club-Kayzer-Superior-Cushioning-Casual-Shoes"
+      "name": "PUMA Army Trainer All-Day Comfort Sneakers",
+      "category": "Men",
+      "price": 9999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/402701/02/sv01/fnd/IND/fmt/png/PUMA-Army-Trainer-All-Day-Comfort-Sneakers"
     },
     {
       "id": "12",
-      "name": "Club Kayzer Superior Cushioning Casual Shoes",
-      "category": "Footwear",
-      "price": 32999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/402603/01/sv01/fnd/IND/fmt/png/Club-Kayzer-Superior-Cushioning-Casual-Shoes"
+      "name": "ASTON MARTIN ARAMCO F1",
+      "category": "Men",
+      "price": 119999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/309110/02/sv01/fnd/IND/fmt/png/PUMA-x-ASTON-MARTIN-ARAMCO-F1%C2%AE-TEAM-Inverse-Sneakers"
+    },
+    {
+      "id": "13",
+      "name": "RS-X Soft Women's Sneakers",
+      "category": "Women",
+      "price": 19900,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/404933/02/sv01/fnd/IND/fmt/png/RS-X-Soft-Women's-Sneakers"
+    },
+    {
+      "id": "14",
+      "name": "Speedcat Zebra Women's Sneakers",
+      "category": "Women",
+      "price": 10999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403356/01/sv01/fnd/IND/fmt/png/Speedcat-Zebra-Women's-Sneakers"
+    },
+    {
+      "id": "15",
+      "name": "Arizona EURO Women's Mesh Suede Sneakers",
+      "category": "Women",
+      "price": 8999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403782/02/sv01/fnd/IND/fmt/png/Arizona-EURO-Women's-Mesh-Suede-Sneakers"
+    },
+    {
+      "id": "16",
+      "name": "Smashic Women's Comfort Casual Sneakers",
+      "category": "Women",
+      "price": 19290,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395111/04/sv01/fnd/IND/fmt/png/Smashic-Women's-Comfort-Casual-Sneakers"
+    },
+    {
+      "id": "17",
+      "name": "Scuderia Ferrari Palermo Sneakers",
+      "category": "New Arrivals",
+      "price": 7999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/308899/01/sv01/fnd/IND/fmt/png/Scuderia-Ferrari-Palermo-Sneakers"
+    },
+    {
+      "id": "18",
+      "name": "PUMA x RIPNDIP Inverse Sneakers",
+      "category": "New Arrivals",
+      "price": 11999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403649/01/sv01/fnd/IND/fmt/png/PUMA-x-RIPNDIP-Inverse-Sneakers"
+    },
+    {
+      "id": "19",
+      "name": "Speedcat Plus Sneakers",
+      "category": "New Arrivals",
+      "price": 10999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402995/03/sv01/fnd/IND/fmt/png/Speedcat-Plus-Sneakers"
+    },
+     {
+      "id": "20",
+      "name": "Speedcat Plus Sneakers",
+      "category": "New Arrivals",
+      "price": 10999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402995/02/sv01/fnd/IND/fmt/png/Speedcat-Plus-Sneakers"
+    },
+    {
+      "id": "21",
+      "name": "PUMA x REPRESENT King Indoor Shoes",
+      "category": "New Arrivals",
+      "price": 12999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403454/01/sv01/fnd/IND/fmt/png/PUMA-x-REPRESENT-King-Indoor-Shoes"
+    },
+    {
+      "id": "22",
+      "name": "Palermo Sneakers",
+      "category": "New Arrivals",
+      "price": 6999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402692/11/sv01/fnd/IND/fmt/png/Palermo-Sneakers"
+    },
+    {
+      "id": "23",
+      "name": "Speedcat Elevated Women's Sneakers",
+      "category": "New Arrivals",
+      "price": 9999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/403619/01/sv01/fnd/IND/fmt/png/Speedcat-Elevated-Women's-Sneakers"
+    },
+    {
+      "id": "24",
+      "name": "PUMA x ASTON MARTIN ARAMCO F1",
+      "category": "New Arrivals",
+      "price": 7990,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/309105/02/sv01/fnd/IND/fmt/png/PUMA-x-ASTON-MARTIN-ARAMCO-F1%C2%AE-TEAM-Drift-Cat-11-Motorsport-Sneakers"
+    },
+    {
+      "id": "25",
+      "name": "Propio NITRO™ Men's Running Shoes",
+      "category": "Sports",
+      "price": 7699,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/311428/08/sv01/fnd/IND/fmt/png/Propio-NITRO%E2%84%A2-Men's-Running-Shoes"
+    },
+    {
+      "id": "26",
+      "name": "Galaxis Pro Men's Performance Boost Running Shoes",
+      "category": "Sports",
+      "price": 3400,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/311767/01/sv01/fnd/IND/fmt/png/Galaxis-Pro-Men's-Performance-Boost-Running-Shoes"
+    },
+    {
+      "id": "27",
+      "name": "Galaxis Pro Women's Performance Boost Running Shoes",
+      "category": "Sports",
+      "price": 6590,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/311839/01/sv01/fnd/IND/fmt/png/Galaxis-Pro-Women's-Performance-Boost-Running-Shoes"
+    },
+    {
+      "id": "28",
+      "name": "ATTACANTO II TT Men's Football Boots",
+      "category": "Sports",
+      "price": 4990,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/108494/02/sv01/fnd/IND/fmt/png/ATTACANTO-II-TT-Men's-Football-Boots"
+    },
+    {
+      "id": "29",
+      "name": "FUTURE 7 ULTIMATE FG/AG Women's Football Boots",
+      "category": "Sports",
+      "price": 9999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/107917/03/sv01/fnd/IND/fmt/png/FUTURE-7-ULTIMATE-FG/AG-Women's-Football-Boots"
+    },
+    {
+      "id": "30",
+      "name": "PWR NITRO™ SQD 2 Women's Training Shoes",
+      "category": "Sports",
+      "price": 12999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/310147/11/sv01/fnd/IND/fmt/png/PWR-NITRO%E2%84%A2-SQD-2-Women's-Training-Shoes"
+    },
+    {
+      "id": "31",
+      "name": "SOFTRIDE Sway Women's Running Shoes",
+      "category": "Sports",
+      "price": 6999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/310318/16/sv01/fnd/IND/fmt/png/SOFTRIDE-Sway-Women's-Running-Shoes"
+    },
+    {
+      "id": "32",
+      "name": "All-Pro NITRO™ 2 Basketball Shoes",
+      "category": "Sports",
+      "price": 11999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/312307/04/sv01/fnd/IND/fmt/png/All-Pro-NITRO%E2%84%A2-2-Basketball-Shoes"
     }
+     
   ],
   "orders": []
 }
