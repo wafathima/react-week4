@@ -1,6 +1,7 @@
 import { useDispatch,useSelector } from "react-redux";
 import { addToCart} from "../cart/cartSlice";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 
 export default function ProductList({products,searchTerm}){
@@ -13,13 +14,14 @@ export default function ProductList({products,searchTerm}){
          navigate ("/auth");
          return;
       }
-      dispatch(addToCart(product))
+      dispatch(addToCart(product));
+      toast.success(`${product.name}Added to cart✨`)
     };
      
    const filteredProducts = searchTerm
    ? products.filter((p)=>
-p.name.toLowerCase().includes(searchTerm.toLowerCase())
-):products;
+   p.name.toLowerCase().includes(searchTerm.toLowerCase())
+   ):products;
     return (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {products.map(p=>(

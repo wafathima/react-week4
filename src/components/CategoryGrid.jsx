@@ -32,7 +32,6 @@ const categories = [
                     </div>
                 </div>
             ))}
-
         </div>
     );
 }

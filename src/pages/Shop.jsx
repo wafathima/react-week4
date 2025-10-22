@@ -15,35 +15,31 @@ export default function Shop(){
 
     const params = new URLSearchParams(location.search);
     const category = params.get("category")||"";
-     const searchQuery = params.get("search")?.toLowerCase|| "";
+     const searchQuery = params.get("search")?.toLowerCase()|| "";
 
     useEffect(()=>{
         dispatch(fetchProducts());
     },[dispatch]);
 
-    // if(status === "loading") return <div>Loading...</div>
-    // if(status === "failed")return <div>Error loading products</div>
-    // if(!items) return null;
-
-    // const filteredProducts = items.filter((p)=>{
-    //     const matchesSearch = p.name.toLowerCase().includes(searchQuery);
-    //     const matchesCategory = category ? p.category === category:true;
-    //     return matchesSearch && matchesCategory;
-    // })
+    console.log("url category",category);
+    console.log("searchQuery",searchQuery);
+    console.log("all items",items);
 
     let filteredProducts = items;
+
     if(searchQuery){
         filteredProducts = filteredProducts.filter((p)=>
-        p.name.toLowerCase().includes(searchQuery.toLowerCase())||
-       p.category.toLowerCase().includes(searchQuery.toLowerCase)
+        p.name.toLowerCase().includes(searchQuery)||
+       p.category.toLowerCase()=== searchQuery
     );
     }
 
     if (category){
         filteredProducts = filteredProducts.filter(
-        (p)=>p.category.toLowerCase()===category.toLowerCase()
+        (p)=>p.category.toLowerCase() === category.toLowerCase()
         );
     }
+    console.log("filtered products", filteredProducts)
 
     return (
          <div>

@@ -1,10 +1,9 @@
 {
   "users": [
     {
-      "id": "0ee5",
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "12345678"
+      "name":"wafa",
+      "email":"wafa@gmail.com",
+      "password":"123456"
     }
   ],
   "products": [
@@ -141,7 +140,7 @@
       "price": 10999,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402995/03/sv01/fnd/IND/fmt/png/Speedcat-Plus-Sneakers"
     },
-     {
+    {
       "id": "20",
       "name": "Speedcat Plus Sneakers",
       "category": "New Arrivals",
@@ -232,7 +231,6 @@
       "price": 11999,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/312307/04/sv01/fnd/IND/fmt/png/All-Pro-NITRO%E2%84%A2-2-Basketball-Shoes"
     }
-     
   ],
   "orders": []
 }

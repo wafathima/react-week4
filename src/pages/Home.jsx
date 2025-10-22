@@ -13,7 +13,7 @@ export default function Home(){
          
             {/* {categories section} */}
             <section className="py-12 px-6">
-                <h2 className="text-3xl font-bold mb-6 text-center">Shop by Category</h2>
+                <h2 className="text-3xl font-bold mb-6 text-center ">SHOP BY CATEGORY</h2>
                   <CategoryGrid/>
             </section>
 

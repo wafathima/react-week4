@@ -4,11 +4,12 @@ import Shop from "./pages/shop";
 import AuthPage from "./features/auth/AuthPage";
 import CartPage from "./features/cart/CartPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { Toaster } from "react-hot-toast";
+
 
 function App() {
   return ( 
-  <div>
- 
+  <div className="pt-20">
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/shop" element={<Shop/>}/>
@@ -19,6 +20,9 @@ function App() {
         </ProtectedRoute>
         }/>
     </Routes>
+  
+   <Toaster position="top-center" reverseOrder={false}/>
+
     </div>
   );
 }

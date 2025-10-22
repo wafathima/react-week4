@@ -24,18 +24,43 @@ export default function Navbar({onSearch}){
             setTerm("");
         }
     }
+    const handleKeyPress = (e) =>{
+        if(e.key === "Enter"){
+            handleSearch()
+        }
+    };
 
     return (
-    
-        <nav className="flex justify-between items-center p-8 bg-white shadow ">
-            <Link to="/" className="font-bold text-5xl">⫹L I O</Link>
+            
+        <nav className="fixed top-0 left-0 w-full bg-white shadow z-50">
+             <div className="max-w-9xl mx-auto px-9 py-5 flex justify-between items-center">
+            <Link to="/" className="font-bold text-5xl text-amber-900">⫹L I O</Link>
           
-
           <div className="flex items-center gap-4">
+
+        {/* {search} */}
+           <div className="flex items-center border">
+            <button
+             onClick={handleSearch}
+             className="p-2"
+             aria-label="search"
+            >
+            <Search size={22}/>
+            </button>
+            <input 
+            type="text"
+            placeholder="SEARCH"
+            value={searchTerm}
+            onChange={(e)=>setSearchTerm(e.target.value)}
+            onKeyDown={handleKeyPress}
+            className=" flex-1 px-3 py-2 outline-none "
+            /> 
+              </div>
+
          {/* {cart icon} */}
-         <div onClick={handleCartClick}
-         className="relative cursor-pointer hover:scale-110 transition-transform"
-         >
+            <div onClick={handleCartClick}
+            className="relative cursor-pointer hover:scale-110 transition-transform"
+            >
             <ShoppingCart size={26} />
             {cartCount >0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white px-2 rounded-full text-xs">
@@ -44,22 +69,10 @@ export default function Navbar({onSearch}){
             )}
          </div>
 
-           {/* {search} */}
-           <div className="flex items-center border">
-            <button onClick={handleSearch}><Search size={22}/></button>
-            <input 
-            type="text"
-            placeholder="What are you looking for?"
-            value={searchTerm}
-            onChange={(e)=>setSearchTerm(e.target.value)}
-            className=" px-3 py-2 w-64 "
-            /> 
-             </div>
-
          {/* {user login&logout} */}
          {user ?(
             <>
-            <span className="text-sm">Hi,{user.name}</span>
+            <span className="text-sm ">Hi,{user.name}</span>
             <button
             onClick={()=>{
                 dispatch(logout());
@@ -71,10 +84,11 @@ export default function Navbar({onSearch}){
             </button>
             </>
          ):(
-            <Link to="/auth" className="py-2 px-3 border rounded">
-                Login / Register
+            <Link to="/auth" className="py-2 px-3 border ">
+                Login 
             </Link>
          )}
+          </div>
           </div>
         </nav>
     );
