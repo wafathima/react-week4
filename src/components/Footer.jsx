@@ -7,7 +7,7 @@ export default function Footer(){
 
                 {/* {support} */}
                 <div>
-                    <h3 className="text-white font-semifold mb-4">SUPPORT</h3>
+                    <h3 className="text-white font-semibold mb-4">SUPPORT</h3>
                     <ul className="space-y-2 text-sm"> 
                         <li><a href="#" className="hover:text-white">Contact us</a></li>
                         <li><a href="#" className="hover:text-white">Promotions & Sale</a></li>

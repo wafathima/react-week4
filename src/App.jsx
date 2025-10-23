@@ -5,6 +5,7 @@ import AuthPage from "./features/auth/AuthPage";
 import CartPage from "./features/cart/CartPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { Toaster } from "react-hot-toast";
+import ProductDetail from "./pages/ProductDetail";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   <div className="pt-20">
     <Routes>
       <Route path="/" element={<Home/>}/>
+      <Route path="/product/:id" element={<ProductDetail/>}/>
       <Route path="/shop" element={<Shop/>}/>
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/cart" element={
@@ -20,9 +22,7 @@ function App() {
         </ProtectedRoute>
         }/>
     </Routes>
-  
    <Toaster position="top-center" reverseOrder={false}/>
-
     </div>
   );
 }

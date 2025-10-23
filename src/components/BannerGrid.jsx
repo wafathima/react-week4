@@ -33,11 +33,12 @@ export default function BannerGrid(){
                        <button className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-300 transition-all duration-300">{b.buttonText1}</button>
                          <button className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-300 transition-all duration-300">{b.buttonText2}</button>
                         </div>
-
                     </div>
                 </div>
+                
             ))}
         </div>
+        
     )
 }
 

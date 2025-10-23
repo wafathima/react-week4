@@ -17,11 +17,16 @@ export const loginUser = createAsyncThunk(
     async({email,password},thunkAPI)=>{
         try{
             const res=await axios.get(`${API}?email=${email}&password=${password}`);
-            if (res.data.lenght === 0){
-                return thunkAPI.rejectWithValue("Invalid email or password");
+
+            if (res.data.length === 0){
+                const newUser = {email,password,name:email.split("@")[0]};
+                const createRes = await axios.post(API,newUser);
+                const {password:_, ...safeUser} = createRes.data;
+                return safeUser;
             }
-            return res.data[0];
-        }catch(err){
+            const {password:_,...safeUser}=res.data[0];
+            return safeUser;
+            }catch(err) {
             return thunkAPI.rejectWithValue("server error")
         }
     }

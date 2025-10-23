@@ -1,9 +1,33 @@
 {
   "users": [
     {
-      "name":"wafa",
-      "email":"wafa@gmail.com",
-      "password":"123456"
+      "name": "wafa",
+      "email": "wafa@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "f824",
+      "email": "heyy@gmail.com",
+      "password": "456789",
+      "name": "heyy"
+    },
+    {
+      "id": "d395",
+      "email": "jiyaa@gmail.com",
+      "password": "sdfghjk",
+      "name": "jiyaa"
+    },
+    {
+      "id": "8e18",
+      "email": "wafa@gmail.com",
+      "password": "3456789",
+      "name": "wafa"
+    },
+    {
+      "id": "e303",
+      "email": "zali@gmail.com",
+      "password": "sdfghj",
+      "name": "zali"
     }
   ],
   "products": [
@@ -12,77 +36,88 @@
       "name": "Palermo Club Vegas Leather Sneakers",
       "category": "Women",
       "price": 89990,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/404669/01/sv01/fnd/IND/fmt/png/Palermo-Club-Vegas-Leather-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/404669/01/sv01/fnd/IND/fmt/png/Palermo-Club-Vegas-Leather-Sneakers",
+      "description": "Straight from the strip to the streets, the Palermo Club Vegas brings iconic terrace style to the Las Vegas spotlight. Part of the exclusive flagship pack, this sneaker serves retro charm with a clean"
     },
     {
       "id": "2",
       "name": "Palermo Sneakers ",
       "category": "Men",
       "price": 69900,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/396463/20/sv01/fnd/IND/fmt/png/Palermo-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/396463/20/sv01/fnd/IND/fmt/png/Palermo-Sneakers",
+      "description": "Straight from the archives, it’s the PUMA Palermo. Combining comfort with style, this classic terrace shoe builds on PUMA’s heritage within football, while appealing to today’s sneakerheads and fashion mavens. This execution featur"
     },
     {
       "id": "3",
       "name": "Palermo Classic Comfort Low Boot Sneakers",
       "category": "Men",
       "price": 55990,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402693/05/sv01/fnd/IND/fmt/png/Palermo-Classic-Comfort-Low-Boot-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402693/05/sv01/fnd/IND/fmt/png/Palermo-Classic-Comfort-Low-Boot-Sneakers",
+      "description": "The Palermo brings back the timeless appeal of a terrace classic with a vintage silhouette and premium materials. Combining suede and leather details with retro PUMA branding, this sneaker"
     },
     {
       "id": "4",
       "name": "Speedcat Plus Quilted Sneakers",
       "category": "Men",
       "price": 109909,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403429/01/sv01/fnd/IND/fmt/png/Speedcat-Plus-Quilted-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403429/01/sv01/fnd/IND/fmt/png/Speedcat-Plus-Quilted-Sneakers",
+      "description": "The PUMA Speedcat has been an icon of racing culture and street style for decades. The world first knew it as an ultra-slim driving shoe designed to shave milliseconds off lap times. "
     },
     {
       "id": "5",
       "name": "Speedcat Sneakers",
       "category": "Men",
       "price": 9999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/406329/54/sv01/fnd/IND/fmt/png/Speedcat-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/406329/54/sv01/fnd/IND/fmt/png/Speedcat-Sneakers",
+      "description": "The PUMA Speedcat has been an icon of racing culture and street style for decades. The world first knew it as an ultra-slim driving shoe designed to shave milliseconds off lap times."
     },
     {
       "id": "6",
       "name": "Speedcat Lea Women's Sneakers",
       "category": "Women",
       "price": 9999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/404390/01/sv01/fnd/IND/fmt/png/PUMA-x-ROS%C3%89-Speedcat-Lea-Women's-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/404390/01/sv01/fnd/IND/fmt/png/PUMA-x-ROS%C3%89-Speedcat-Lea-Women's-Sneakers",
+      "description": "Introducing the first-ever PUMA x ROSÉ capsule collection. Rooted in the pop superstar’s distinct sense of style, the collection"
     },
     {
       "id": "7",
       "name": "Speedcat Ballet Women's Metallic Shoes",
       "category": "Women",
       "price": 68999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/401581/01/sv01/fnd/IND/fmt/png/Speedcat-Ballet-Women's-Metallic-Shoes"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/401581/01/sv01/fnd/IND/fmt/png/Speedcat-Ballet-Women's-Metallic-Shoes",
+      "description": "An icon of racing culture, the PUMA Speedcat has been synonymous with speed, precision, and unparalleled performance"
     },
     {
       "id": "8",
       "name": "Speedcat Metallic Sneakers",
       "category": "Men",
       "price": 49900,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/403689/01/sv01/fnd/IND/fmt/png/Speedcat-Metallic-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/403689/01/sv01/fnd/IND/fmt/png/Speedcat-Metallic-Sneakers",
+      "description": "For over two decades, the PUMA Speedcat has been an icon of streetwear and racing culture. First engineered as an ultra-slim"
     },
     {
       "id": "9",
       "name": "Speedcat Suede Cafe Women's Ballet Shoes",
       "category": "Women",
       "price": 12000,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_350,h_350/global/406758/02/sv01/fnd/IND/fmt/png/Speedcat-Suede-Cafe-Women's-Ballet-Shoes"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_350,h_350/global/406758/02/sv01/fnd/IND/fmt/png/Speedcat-Suede-Cafe-Women's-Ballet-Shoes",
+      "description": "The PUMA Speedcat has been an icon of racing culture and street style for decades. The world first knew it as an ultra-slim driving"
     },
     {
       "id": "10",
       "name": "Scuderia Ferrari Palermo Sneakers",
       "category": "Men",
       "price": 7999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/308899/03/sv01/fnd/IND/fmt/png/Scuderia-Ferrari-Palermo-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/308899/03/sv01/fnd/IND/fmt/png/Scuderia-Ferrari-Palermo-Sneakers",
+      "description": "The PUMA and Scuderia Ferrari collection is a tribute to motorsport excellence and Ferrari's legendary racing heritage"
     },
     {
       "id": "11",
       "name": "PUMA Army Trainer All-Day Comfort Sneakers",
       "category": "Men",
       "price": 9999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/402701/02/sv01/fnd/IND/fmt/png/PUMA-Army-Trainer-All-Day-Comfort-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/402701/02/sv01/fnd/IND/fmt/png/PUMA-Army-Trainer-All-Day-Comfort-Sneakers",
+      "description": "From the court to the streets, the Army Trainer brings heritage energy to every step. A smooth leather upper with suede overlays adds a retro edge, while molded comfort insoles keep you moving"
     },
     {
       "id": "12",
@@ -124,35 +159,40 @@
       "name": "Scuderia Ferrari Palermo Sneakers",
       "category": "New Arrivals",
       "price": 7999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/308899/01/sv01/fnd/IND/fmt/png/Scuderia-Ferrari-Palermo-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/308899/01/sv01/fnd/IND/fmt/png/Scuderia-Ferrari-Palermo-Sneakers",
+      "description": "The PUMA and Scuderia Ferrari collection is a tribute to motorsport excellence and Ferrari's legendary racing heritage"
     },
     {
       "id": "18",
       "name": "PUMA x RIPNDIP Inverse Sneakers",
       "category": "New Arrivals",
       "price": 11999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403649/01/sv01/fnd/IND/fmt/png/PUMA-x-RIPNDIP-Inverse-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403649/01/sv01/fnd/IND/fmt/png/PUMA-x-RIPNDIP-Inverse-Sneakers",
+      "description": "Nermal is back for more. Did you miss him? PUMA is partnering with Los Angeles based streetwear and lifestyle brand RIPNDIP"
     },
     {
       "id": "19",
       "name": "Speedcat Plus Sneakers",
       "category": "New Arrivals",
       "price": 10999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402995/03/sv01/fnd/IND/fmt/png/Speedcat-Plus-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402995/03/sv01/fnd/IND/fmt/png/Speedcat-Plus-Sneakers",
+      "description": "The PUMA Speedcat has been an icon of racing culture and street style for decades. First known as an ultra-slim driving shoe"
     },
     {
       "id": "20",
       "name": "Speedcat Plus Sneakers",
       "category": "New Arrivals",
       "price": 10999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402995/02/sv01/fnd/IND/fmt/png/Speedcat-Plus-Sneakers"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402995/02/sv01/fnd/IND/fmt/png/Speedcat-Plus-Sneakers",
+      "description": "The PUMA Speedcat has been an icon of racing culture and street style for decades. First known as an ultra-slim driving shoe designed to shave milliseconds off lap times, it soon became"
     },
     {
       "id": "21",
       "name": "PUMA x REPRESENT King Indoor Shoes",
       "category": "New Arrivals",
       "price": 12999,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403454/01/sv01/fnd/IND/fmt/png/PUMA-x-REPRESENT-King-Indoor-Shoes"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403454/01/sv01/fnd/IND/fmt/png/PUMA-x-REPRESENT-King-Indoor-Shoes",
+      "description": "PUMA reunites with Represent for a collection that blends football heritage with contemporary luxury. Rooted in Represent’s British"
     },
     {
       "id": "22",
@@ -180,28 +220,32 @@
       "name": "Propio NITRO™ Men's Running Shoes",
       "category": "Sports",
       "price": 7699,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/311428/08/sv01/fnd/IND/fmt/png/Propio-NITRO%E2%84%A2-Men's-Running-Shoes"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/311428/08/sv01/fnd/IND/fmt/png/Propio-NITRO%E2%84%A2-Men's-Running-Shoes",
+      "description": "The Propio NITRO™ is your partner for speedy runs and workouts. Its breathable mesh upper keeps you light on your feet,"
     },
     {
       "id": "26",
       "name": "Galaxis Pro Men's Performance Boost Running Shoes",
       "category": "Sports",
       "price": 3400,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/311767/01/sv01/fnd/IND/fmt/png/Galaxis-Pro-Men's-Performance-Boost-Running-Shoes"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/311767/01/sv01/fnd/IND/fmt/png/Galaxis-Pro-Men's-Performance-Boost-Running-Shoes",
+      "description": "These running shoes are the perfect blend of comfort and support."
     },
     {
       "id": "27",
       "name": "Galaxis Pro Women's Performance Boost Running Shoes",
       "category": "Sports",
       "price": 6590,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/311839/01/sv01/fnd/IND/fmt/png/Galaxis-Pro-Women's-Performance-Boost-Running-Shoes"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/311839/01/sv01/fnd/IND/fmt/png/Galaxis-Pro-Women's-Performance-Boost-Running-Shoes",
+      "description": "Step into the world of comfort and high functionality with these Women's Running Footwear."
     },
     {
       "id": "28",
       "name": "ATTACANTO II TT Men's Football Boots",
       "category": "Sports",
       "price": 4990,
-      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/108494/02/sv01/fnd/IND/fmt/png/ATTACANTO-II-TT-Men's-Football-Boots"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/108494/02/sv01/fnd/IND/fmt/png/ATTACANTO-II-TT-Men's-Football-Boots",
+      "description": "The ATTACANTO II football boot is built for players who thrive on speed and precision"
     },
     {
       "id": "29",

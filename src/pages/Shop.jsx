@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { fetchProducts } from "../features/products/productsSlice";
@@ -16,6 +16,7 @@ export default function Shop(){
     const params = new URLSearchParams(location.search);
     const category = params.get("category")||"";
      const searchQuery = params.get("search")?.toLowerCase()|| "";
+     const [sortOrder,setSortOrder] = useState("default");
 
     useEffect(()=>{
         dispatch(fetchProducts());
@@ -39,7 +40,14 @@ export default function Shop(){
         (p)=>p.category.toLowerCase() === category.toLowerCase()
         );
     }
-    console.log("filtered products", filteredProducts)
+ 
+    if(sortOrder === "low-high"){
+        filteredProducts=[...filteredProducts].sort((a,b)=>a.price-b.price)
+    }else if (sortOrder === "high-low"){
+        filteredProducts=[...filteredProducts].sort((a,b)=>b.price - a.price)
+    }
+
+    // console.log("filtered products", filteredProducts)
 
     return (
          <div>
@@ -48,6 +56,20 @@ export default function Shop(){
                 <h1 className="text-3xl font-bold mb-6 text-center">
                     {category? `${category}`:"All Products"}
                 </h1>
+
+                {/* {sort} */}
+                  <div className="flex justify-end mb-6">
+                       <select
+                       value={sortOrder}
+                       onChange={(e)=>setSortOrder(e.target.value)}
+                       className="border px-3 py-2 rounded text-sm"
+                       >
+                        <option value="All">Sort by</option>
+                        <option value="low-high">Low - High</option>
+                        <option value="high-low">High-Low</option>
+                       </select>
+                  </div>
+
                 {filteredProducts.length > 0 ?(
                     <ProductList products={filteredProducts}/>
                 ):(

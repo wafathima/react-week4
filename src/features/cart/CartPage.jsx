@@ -19,7 +19,7 @@ export default function CartPage(){
                     <img className="w-20 h-20 object-cover" src={i.image} alt={i.name}/>
                    <div className="flex-1 ">
                     <div className="font-semibold ">{i.name}</div>
-                    <div className="text-blue-600">${i.price}</div>
+                    <div className="text-blue-600 font-bold">${i.price}</div>
                    </div>
                    <input type="number" min={1} value={i.qty} onChange={(e)=>dispatch(setQty({id:i.id,qty:Number(e.target.value)}))} className="w-16 border p-1"/>
                    <button onClick={()=>dispatch(removeFromCart(i.id))} className="py-1 px-3 border bg-red-500 text-white rounded">Remove</button>

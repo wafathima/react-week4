@@ -2,6 +2,7 @@ import { useDispatch,useSelector } from "react-redux";
 import { addToCart} from "../cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 
 export default function ProductList({products,searchTerm}){
@@ -15,7 +16,7 @@ export default function ProductList({products,searchTerm}){
          return;
       }
       dispatch(addToCart(product));
-      toast.success(`${product.name}Added to cart✨`)
+      toast.success(`${product.name } Added to cart✨`)
     };
      
    const filteredProducts = searchTerm
@@ -26,9 +27,15 @@ export default function ProductList({products,searchTerm}){
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {products.map(p=>(
               <div key={p.id} className="border rounded p-4 hover:shadow transition">
-                <img src={p.image} alt={p.name} className="w-full h-40 object-cover rounded mb-2" />
-                <h3 className="font-semibold">{p.name}</h3>
-                <p className="text-blue-600 font-bold">${p.price}</p>
+                <Link to={`/product/${p.id}`}>
+                <img 
+                  src={p.image}
+                  alt={p.name}
+                  className="w-full h-60 object-cover mb-3 rounde"
+                />
+                <h3 className="text-lg font-semibold">{p.name}</h3>
+                <p className="text-blue-500 font-bold">${p.price}</p>
+                </Link>
                 <p className="text-sm text-gray-600">{p.category}</p>
                 <button onClick={()=> onAdd(p)} className="mt-3 w-full py-2 bg-black text-white rounded">Add to cart</button>
               </div>
