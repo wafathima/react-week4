@@ -9,7 +9,7 @@ function FeaturesSection({}){
             {/* {view All button} */}
             <button
             onClick={()=>navigate("/shop")}
-            className="bg-amber-600 text-white px-10 py-6 rounded-md text-lg font-semibold mb-12 hover:bg-amber-400 transition">
+            className="bg-blue-800 text-white px-10 py-6 rounded-md text-lg font-semibold mb-12 hover:bg-blue-600 transition">
             VIEW ALL PRODUCTS
             </button>
             

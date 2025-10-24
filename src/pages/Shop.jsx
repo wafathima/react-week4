@@ -47,8 +47,6 @@ export default function Shop(){
         filteredProducts=[...filteredProducts].sort((a,b)=>b.price - a.price)
     }
 
-    // console.log("filtered products", filteredProducts)
-
     return (
          <div>
             <Navbar/>

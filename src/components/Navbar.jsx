@@ -1,14 +1,15 @@
 import { useSelector,useDispatch } from "react-redux";
 import { Link,useNavigate } from "react-router-dom";
 import {logout} from "../features/auth/authSlice";
-import {ShoppingCart,Search} from "lucide-react";
+import {ShoppingCart,Search,ShoppingBag,Home } from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar({onSearch}){
     const [term,setTerm]= useState("")
-    const user = useSelector(s=> s.auth.user);
-    const cartCount = useSelector (s=> s.cart.items.reduce((a,b)=>a+b.qty,0));
+    const user = useSelector(state=> state.auth.user);
+    const cartCount = useSelector (state=> state.cart.items.reduce((a,b)=>a+b.qty,0));
     const [searchTerm,setSearchTerm] = useState("");
+    const orderItems = useSelector((state)=>state.orders.items);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -34,9 +35,16 @@ export default function Navbar({onSearch}){
             
         <nav className="fixed top-0 left-0 w-full bg-white shadow z-50">
              <div className="max-w-9xl mx-auto px-9 py-5 flex justify-between items-center">
-            <Link to="/" className="font-bold text-5xl text-amber-900">⫹L I O</Link>
+            <Link to="/" className="font-bold text-5xl text-blue-900">⫹L I O</Link>
           
           <div className="flex items-center gap-4">
+          {/* {home} */}
+            <button
+            onClick={()=> navigate("/")}
+            className="hover:text-blue-400 transition-color"
+            >
+              <Home size={22}/>
+            </button>
 
         {/* {search} */}
            <div className="flex items-center border">
@@ -47,6 +55,7 @@ export default function Navbar({onSearch}){
             >
             <Search size={22}/>
             </button>
+    
             <input 
             type="text"
             placeholder="SEARCH"
@@ -57,9 +66,9 @@ export default function Navbar({onSearch}){
             /> 
               </div>
 
-         {/* {cart icon} */}
+            {/* {cart icon} */}
             <div onClick={handleCartClick}
-            className="relative cursor-pointer hover:scale-110 transition-transform"
+            className="relative cursor-pointer hover:text-blue-400 transition-color"
             >
             <ShoppingCart size={26} />
             {cartCount >0 && (
@@ -68,6 +77,16 @@ export default function Navbar({onSearch}){
                 </span>
             )}
          </div>
+
+         {/* {orders} */}
+         <Link to="/orders" className="relative">
+         <ShoppingBag  className="w-6 h-6 relative cursor-pointer hover:text-blue-400 transition-color"/>
+         {orderItems.length >0 &&(
+            <span className="absolute -top-2 -right-2 bg-green-500 text-white rounded-full text-xs px-2">
+            {orderItems.length}
+            </span>
+         )}
+         </Link>
 
          {/* {user login&logout} */}
          {user ?(

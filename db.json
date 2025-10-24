@@ -1,35 +1,5 @@
 {
-  "users": [
-    {
-      "name": "wafa",
-      "email": "wafa@gmail.com",
-      "password": "123456"
-    },
-    {
-      "id": "f824",
-      "email": "heyy@gmail.com",
-      "password": "456789",
-      "name": "heyy"
-    },
-    {
-      "id": "d395",
-      "email": "jiyaa@gmail.com",
-      "password": "sdfghjk",
-      "name": "jiyaa"
-    },
-    {
-      "id": "8e18",
-      "email": "wafa@gmail.com",
-      "password": "3456789",
-      "name": "wafa"
-    },
-    {
-      "id": "e303",
-      "email": "zali@gmail.com",
-      "password": "sdfghj",
-      "name": "zali"
-    }
-  ],
+  "users": [],
   "products": [
     {
       "id": "1",
@@ -276,5 +246,6 @@
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/312307/04/sv01/fnd/IND/fmt/png/All-Pro-NITRO%E2%84%A2-2-Basketball-Shoes"
     }
   ],
-  "orders": []
+  "orders": [
+  ]
 }

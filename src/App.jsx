@@ -6,6 +6,8 @@ import CartPage from "./features/cart/CartPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { Toaster } from "react-hot-toast";
 import ProductDetail from "./pages/ProductDetail";
+import OrdersPage from "./features/orders/OrdersPage";
+import Layout from "./components/Layout";
 
 
 function App() {
@@ -18,9 +20,16 @@ function App() {
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/cart" element={
         <ProtectedRoute>
+          <Layout>
         <CartPage/>
+        </Layout>
         </ProtectedRoute>
         }/>
+        <Route path="/orders" element={
+          <Layout>
+          <OrdersPage/>
+          </Layout>
+          }/>
     </Routes>
    <Toaster position="top-center" reverseOrder={false}/>
     </div>
