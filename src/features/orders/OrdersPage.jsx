@@ -1,11 +1,10 @@
 import {removeFromOrder } from "./ordersSlice"; 
 import { useSelector,useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import axios from "axios";
 import Navbar from "../../components/Navbar";
 import toast from "react-hot-toast";
-import { addOrder } from "./ordersSlice";
 
 export default function OrdersPage(){
     const user = useSelector((state)=>state.auth.user);
@@ -13,48 +12,7 @@ export default function OrdersPage(){
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleShopOrder =(product) =>{
-        const user = JSON.parse(localStorage.getItem("user"));
-        if (!user){
-            navigate("/auth");
-            toast.error("Please login to checkout!");
-            return;
-        }
-
-        const order={
-            id:Date.now(),
-            userEmail:user.email,
-            items:[
-                {
-                    id:product.id,
-                    name:product.name,
-                    price:product.price,
-                    image:product.image,
-                    qty:1,
-                },
-            ],
-            total:product.price,
-            timestamp:Date.now(),
-        };
-
-        dispatch(addOrder(order));
-       toast.success(
-            <div className="flex flex-col items-start">
-            <span className="font-bold text-white">✨Order Placed!</span>
-            <span className="text-sm text-white">
-                {product.name}-${product.price.toFixed(2)}
-            </span>
-            </div>,
-            {
-                duration:2000,
-                style:{
-                    background:'#136913ff',
-                    padding:'16px',
-                    borderRadius:'12px'
-                },
-            }
-        );
-    }
+    const [confirmedOreders,  setConfirmedOrders] = useState([])
     
     useEffect(()=>{
         if(!user) navigate("/auth");
@@ -72,6 +30,22 @@ export default function OrdersPage(){
          </div>
         );
     }
+ 
+    const handleConfirm = (orderId) =>{
+        toast.success("Thank You! Your Order Confirmed!🎉");
+        setConfirmedOrders((prev)=>[...prev,orderId]);
+
+        setTimeout(()=>{
+            dispatch(removeFromOrder(orderId));
+            setConfirmedOrders((prev)=>prev.filter((id)=> id !== orderId));
+        },3000);
+    };
+
+    const handleCancel = (orderId)=>{
+        toast.error("Order Cancelled");
+        dispatch(removeFromOrder(orderId));
+    };
+
     return (
         <div className="min-h-screen flex flex-col">
             <Navbar/>
@@ -81,14 +55,25 @@ export default function OrdersPage(){
                 {orders.map((order,idx)=>{
                     const total = order.total ?? order.items?. reduce((sum,i)=> sum + i.price * i.qty,0)?? 0;
 
+                    const isConfirmed = confirmedOreders.includes(order.id);
+
                     return (
                         <div 
                         key={order.id || idx}
-                        className="border p-4 rounded mb-4 shadow-sm"
+                        className={`border p-4 rounded mb-4 shadow-sm bg-white transition-all duration-300 ${
+                         isConfirmed ? "border-green-500 bg-green-50" : ""
+                            }`}
                         >
                        <h2 className="font-bold">Order #{order.id || idx + 1}</h2>
                        
-                       <p>Total:${total.toFixed(2)}</p>
+                       <p className="text-blue-600 mb-3"
+                       ><strong>Total:$</strong>{total.toFixed(2)}</p>
+
+                       {isConfirmed &&(
+                        <div className="text-green-700 font-semibold mb-2 flex items-center gap-2">
+                        ✅Order Confirmed
+                        </div>
+                       )}
 
                        <div className="mt-2">
                         {order.items?.length > 0 ? (
@@ -114,22 +99,35 @@ export default function OrdersPage(){
                         ):(
                             <p className="text-gray-500 italic">No items found in this order.</p>
                         )}
+                          
+                          {!isConfirmed && (
+                        <div className="flex gap-5 justify-end">
                          <button 
-                         onClick={()=>dispatch(removeFromOrder(order.id))}
-                         className="mt-2 py-1 px-3 bg-red-500 text-white rounded hover:bg-red-700"
+                         onClick={()=> handleCancel(order.id)}
+                         className="mt-2 py-3 px-5 bg-red-600 text-white rounded hover:bg-red-800"
                          >
                           Cancel order
                          </button>
+
+                         <button
+                          onClick={()=> handleConfirm(order.id)}
+                         className="mt-2 py-3 px-5 bg-green-600 text-white rounded hover:bg-green-800"
+                         >
+                         Confirm Order
+                         </button>
+                         </div>
+                          )}
                        </div>
                         </div>
-
                     )
                })}
             </div>
            </div>
     );
-}
-                
+    }
+         
+
+
                 
                 
     

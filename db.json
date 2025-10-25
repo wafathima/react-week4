@@ -1,5 +1,18 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "b73b",
+      "email": "wad@gmail.com",
+      "password": "cvbn",
+      "name": "wad"
+    },
+    {
+      "id": "af4f",
+      "email": "wafa@gmail.com",
+      "password": "xcvbnm",
+      "name": "wafa"
+    }
+  ],
   "products": [
     {
       "id": "1",
@@ -244,6 +257,102 @@
       "category": "Sports",
       "price": 11999,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/312307/04/sv01/fnd/IND/fmt/png/All-Pro-NITRO%E2%84%A2-2-Basketball-Shoes"
+    },
+    {
+      "id": "33",
+      "name": "BMW M Motorsport M4 Hero Inverse Sneakers",
+      "category": "Men",
+      "price": 11000,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/308993/01/sv01/fnd/IND/fmt/png/BMW-M-Motorsport-M4-Hero-Inverse-Sneakers",
+      "description": "PUMA x BMW M MOTORSPORT returns with a collection inspired by the latest evolution of the BMW M4 GT4 EVO."
+    },
+    {
+      "id": "34",
+      "name": "F1 Inhale 75 YRS Sneakers",
+      "category": "Men",
+      "price": 10999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/308889/01/sv01/fnd/IND/fmt/png/F1-Inhale-75-YRS-Sneakers",
+      "description": "A milestone worth the noise: Formula 1® turns 75. And because legends never slow down, PUMA and FORMULA 1"
+    },
+    {
+      "id": "35",
+      "name": "Scuderia Ferrari HP Speedcat Sneakers",
+      "category": "Men",
+      "price": 10999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/308905/01/sv01/fnd/IND/fmt/png/Scuderia-Ferrari-HP-Speedcat-Sneakers",
+      "description": "Unleash your inner racer with PUMA for SCUDERIA FERRARI HP. The latest collection blends the thrill of the track with street"
+    },
+    {
+      "id": "36",
+      "name": "Scuderia Ferrari Trinity Men's Sneakers",
+      "category": "Men",
+      "price": 8999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/307950/04/sv01/fnd/IND/fmt/png/Scuderia-Ferrari-Trinity-Men's-Sneakers",
+      "description": "In 2005, Scuderia Ferrari - the preeminent, time-honoured Formula 1 team . "
+    },
+    {
+      "id": "37",
+      "name": "Blktop Rider Vibrant Women's Sneakers",
+      "category": "Women",
+      "price": 5399,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/397321/05/sv01/fnd/IND/fmt/png/Blktop-Rider-Vibrant-Women's-Sneakers",
+      "description": "The Blacktop Rider features a rubber outsole inspired by PUMA's track and field archive from the 80s."
+    },
+    {
+      "id": "38",
+      "name": "Smashic Comfort Casual Sneakers",
+      "category": "Women",
+      "price": 2109,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/394371/01/sv01/fnd/IND/fmt/png/Smashic-Comfort-Casual-Sneakers",
+      "description": "Step up your sneaker game with the Smashic Sneakers from PUMA"
+    },
+    {
+      "id": "39",
+      "name": "Palermo Moda Ethereal Women's Sneakers",
+      "category": "Women",
+      "price": 6999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/403375/02/sv01/fnd/IND/fmt/png/Palermo-Moda-Ethereal-Women's-Sneakers",
+      "description": "Elevate your game with the Palermo Moda. This twist on the iconic Palermo stands out with vibrant colors and a slightly lifted gum"
+    },
+    {
+      "id": "40",
+      "name": "Speedcat Suede Ballet Women's Shoes",
+      "category": "Women",
+      "price": 109909,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/401287/02/sv01/fnd/IND/fmt/png/Speedcat-Suede-Ballet-Women's-Shoes",
+      "description": "Rewrite the classics with Speedcat Ballet, a new iteration of the PUMA Speedcat. "
+    },
+    {
+      "id": "41",
+      "name": "SOFTRIDE Enzo Evo Women's Running Shoes",
+      "category": "Sports",
+      "price": 6999,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/378068/23/sv01/fnd/IND/fmt/png/SOFTRIDE-Enzo-Evo-Women's-Running-Shoes",
+      "description": "PUMA's SOFTRIDE technology represents an advancement in footwear comfort"
+    },
+    {
+      "id": "42",
+      "name": "Softride Premier GlideKnit Walking Shoes",
+      "category": "Sports",
+      "price": 5499,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/312706/05/sv01/fnd/IND/fmt/png/Softride-Premier-GlideKnit-Walking-Shoes",
+      "description": "Slide into comfort and style with the Softride Premier shoes. Designed with a sleek one-piece knit upper."
+    },
+    {
+      "id": "43",
+      "name": "Surgestride Women's Training Shoes",
+      "category": "Sports",
+      "price": 3889,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/311135/02/sv01/fnd/IND/fmt/png/Surgestride-Women's-Training-Shoes",
+      "description": "Train with purpose in the Surgestride. With a lightweight construction and responsive cushioning,"
+    },
+    {
+      "id": "44",
+      "name": "All-Day Active Slipon Sneakers",
+      "category": "Sports",
+      "price": 2899,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/386478/11/sv01/fnd/IND/fmt/png/All-Day-Active-Slipon-Sneakers",
+      "description": "Step into your day with these sturdy slip-ons. Featuring an active, lightweight IMEVA midsole and rubber pods on the outsole "
     }
   ],
   "orders": [

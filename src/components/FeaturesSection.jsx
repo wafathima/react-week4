@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 function FeaturesSection({}){
     const navigate = useNavigate();
     return (
-        <div className="w-full py-12 flex flex-col items-center bg-white">
+        <div className="w-full py-12 flex flex-col items-center bg-blue-100">
 
             {/* {view All button} */}
             <button
             onClick={()=>navigate("/shop")}
-            className="bg-blue-800 text-white px-10 py-6 rounded-md text-lg font-semibold mb-12 hover:bg-blue-600 transition">
+            className="bg-blue-800 text-white px-10 py-6 rounded-md text-lg  font-semibold mb-12 hover:bg-blue-600 transition">
             VIEW ALL PRODUCTS
             </button>
             

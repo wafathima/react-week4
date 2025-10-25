@@ -1,6 +1,7 @@
-import { Subtitles } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 export default function BannerGrid(){
+  const navigate = useNavigate();
+
     const banners=[
         {
             id:1,
@@ -30,8 +31,11 @@ export default function BannerGrid(){
                        <p className="text-4xl mb-6 max-w-md opacity-90">{b.subtitle}</p>
 
                        <div className="flex gap-6">
-                       <button className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-300 transition-all duration-300">{b.buttonText1}</button>
-                         <button className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-300 transition-all duration-300">{b.buttonText2}</button>
+
+                       <button onClick={()=>navigate("/shop?category=Men")}
+                       className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-300 transition-all duration-300">{b.buttonText1}</button>
+                         <button onClick={()=> navigate("/shop?category=Women")}
+                          className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-300 transition-all duration-300">{b.buttonText2}</button>
                         </div>
                     </div>
                 </div>
