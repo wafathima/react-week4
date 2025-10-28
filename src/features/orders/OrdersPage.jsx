@@ -1,4 +1,4 @@
-import {removeFromOrder } from "./ordersSlice"; 
+import {removeFromOrder,clearOrders} from "./ordersSlice"; 
 import { useSelector,useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect,useState } from "react";
@@ -13,7 +13,8 @@ export default function OrdersPage(){
     const navigate = useNavigate();
 
     const [confirmedOreders,  setConfirmedOrders] = useState([])
-    
+
+   
     useEffect(()=>{
         if(!user) navigate("/auth");
     },[user,navigate]);
@@ -31,26 +32,11 @@ export default function OrdersPage(){
         );
     }
  
-    const handleConfirm = (orderId) =>{
-        toast.success("Thank You! Your Order Confirmed!🎉");
-        setConfirmedOrders((prev)=>[...prev,orderId]);
-
-        setTimeout(()=>{
-            dispatch(removeFromOrder(orderId));
-            setConfirmedOrders((prev)=>prev.filter((id)=> id !== orderId));
-        },3000);
-    };
-
-    const handleCancel = (orderId)=>{
-        toast.error("Order Cancelled");
-        dispatch(removeFromOrder(orderId));
-    };
-
     return (
         <div className="min-h-screen flex flex-col">
             <Navbar/>
             <div className="flex-grow container mx-auto p-6">
-                <h1 className="text-3xl font-bold mb-6 text-amber-900">Your Orders</h1>
+                <h1 className="text-3xl font-bold mb-6 mt-7 ">Your Orders</h1>
 
                 {orders.map((order,idx)=>{
                     const total = order.total ?? order.items?. reduce((sum,i)=> sum + i.price * i.qty,0)?? 0;
@@ -65,15 +51,16 @@ export default function OrdersPage(){
                             }`}
                         >
                        <h2 className="font-bold">Order #{order.id || idx + 1}</h2>
+                       { order.timestamp &&(
+                        <p className="text-sm text-gray-500 mb-2">
+                            Date:{new Date(order.timestamp).toLocaleString()}
+                        </p>
+                       )
+
+                       }
                        
                        <p className="text-blue-600 mb-3"
                        ><strong>Total:$</strong>{total.toFixed(2)}</p>
-
-                       {isConfirmed &&(
-                        <div className="text-green-700 font-semibold mb-2 flex items-center gap-2">
-                        ✅Order Confirmed
-                        </div>
-                       )}
 
                        <div className="mt-2">
                         {order.items?.length > 0 ? (
@@ -99,24 +86,7 @@ export default function OrdersPage(){
                         ):(
                             <p className="text-gray-500 italic">No items found in this order.</p>
                         )}
-                          
-                          {!isConfirmed && (
-                        <div className="flex gap-5 justify-end">
-                         <button 
-                         onClick={()=> handleCancel(order.id)}
-                         className="mt-2 py-3 px-5 bg-red-600 text-white rounded hover:bg-red-800"
-                         >
-                          Cancel order
-                         </button>
-
-                         <button
-                          onClick={()=> handleConfirm(order.id)}
-                         className="mt-2 py-3 px-5 bg-green-600 text-white rounded hover:bg-green-800"
-                         >
-                         Confirm Order
-                         </button>
-                         </div>
-                          )}
+                    
                        </div>
                         </div>
                     )

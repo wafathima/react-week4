@@ -5,7 +5,8 @@ import { useDispatch} from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
 import Navbar from "../components/Navbar";
 import toast from "react-hot-toast";
-import { addOrder } from "../features/orders/ordersSlice";
+// import { addOrder } from "../features/orders/ordersSlice";
+import { addToBag } from "../features/bag/bagSlice";
 
 export default function ProductDetail(){
     const {id} = useParams();
@@ -36,15 +37,13 @@ export default function ProductDetail(){
         dispatch(addToCart(product));
          toast.success(
             <div className="felx flex-col items-start">
-            <span className="font-bold text-white">Added to Cart!🎉</span>
-             <span className="text-sm text-white">
-                    {product.name} - ${product.price.toFixed(2)}
-                </span>
+            <span className="font-bold text-white">Added to Cart!</span>
+             
             </div>,
             {
                 duration:2000,
                 style:{
-                    background:'#890b0bff',
+                    background:'#3c9d08ff',
                     padding:'16px',
                     borderRadius:'12px'
                 },
@@ -52,46 +51,27 @@ export default function ProductDetail(){
         );
     };
 
-    const handleOrderNow = () =>{
-        const user = JSON.parse(localStorage.getItem("user"));
-        if(!user){
-            navigate("/");
-            return;
+        const handleAddToBag =()=>{
+            const user =JSON.parse(localStorage.getItem("user"));
+            if(!user){
+                navigate("/auth")
+                return;
+            }
+            dispatch(addToBag(product));
+            toast.success(
+                <div className="flex flex-col items-start">
+                    <span className="font-bold text-white">Added to Bag!</span>
+                    </div>,
+                        {
+                            duration:2000,
+                            style:{
+                                background:'#3c9d08ff',
+                                padding:'16px',
+                                borderRadius:'12px'
+                            }
+                        }
+            )
         }
-
-        const order={
-            id:Date.now(),
-            userEmail:user.email,
-            items:[
-                {
-                    id:product.id,
-                    name:product.name,
-                    price:product.price,
-                    image:product.image,
-                    qty:1
-                }
-            ],
-            total:product.price,
-            timestamp:Date.now()
-        };
-        dispatch (addOrder(order));
-        toast.success(
-            <div className="felx flex-col items-start">
-                <span className="font-bold text-white">✨Order Placed!</span>
-                <span className="text-sm text-white">
-                    {product.name} - ${product.price.toFixed(2)}
-                </span>
-            </div>,
-            {
-                duration:2000,
-                style:{
-                    background:'#136913ff',
-                    padding:'16px',
-                    borderRadius:'12px'
-                },
-            }
-        );
-    };
 
     if(loading) return <div className="p-10 text-center">Loading...</div>
     if(!product) return <div className="p-10 text-center">Product not found</div>
@@ -99,7 +79,7 @@ export default function ProductDetail(){
     return(
         <>
         <Navbar/>
-        <div className="container mx-auto px-6 py-10 flex flex-col md:flex-row gap-10">
+        <div className="container mx-auto px-6 py-10 flex flex-col md:flex-row gap-10 mt-7">
             <img
             src={product.image}
             alt={product.name}
@@ -114,19 +94,20 @@ export default function ProductDetail(){
                     {product.description || "no description available"}
                 </p>
                    
-                   
                 <div className="flex gap-4">
                 <button 
                 onClick={handleAddToCart}
-                className="bg-amber-600 text-white px-6 py-3 rounded-lg hover:bg-amber-700">
+                className="bg-black text-white px-6 py-3 rounded-lg hover:bg-green-700">
                  Add to Cart
                 </button>
-
-                <button onClick={ handleOrderNow }
-                className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
+                <div>
+                 
+                <button onClick={ handleAddToBag }
+                className="bg-black text-white px-6 py-3 rounded-lg hover:bg-green-700"
                 >
-                Order Now    
+                Add to Bag   
                 </button>
+                </div>
                 </div>
             </div>
         </div>

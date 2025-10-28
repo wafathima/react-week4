@@ -32,14 +32,21 @@ export default function CartPage(){
             userEmail:user.email,
             items:orderItems,
             total:orderTotel,
-            date:new Date().toLocaleString(),
+            timestamp:Date.now()
         };
         try{
             await axios.post("http://localhost:5001/orders",order);
             dispatch(addOrder(order));
+
+              if (product){
+                dispatch(removeFromCart(product.id));
+              }else{
+                dispatch(clearCart());
+              }
+
             toast.success(
             <div className="flex flex-col items-start">
-            <span className="font-bold text-white">✨Order Placed!</span>
+            <span className="font-bold text-white">Order Placed!</span>
             </div>,
             {
                 duration:2000,
@@ -51,7 +58,7 @@ export default function CartPage(){
             }
         );
         }catch(err){
-            toast.error("Failed to place order‼️");
+            toast.error("Failed to place order‼");
             console.log(err)
         }
      }
@@ -60,7 +67,7 @@ export default function CartPage(){
         <div>
             <Navbar/>
         <div className="p-8">
-        <h1 className="text-4xl font-bold mb-4 text-amber-900">Your Cart</h1>
+        <h1 className="text-4xl font-bold mb-4 mt-7">Your Cart</h1>
 
         {items.length === 0 ? 
         <div>Cart is empty</div> :(
@@ -84,13 +91,13 @@ export default function CartPage(){
 
                    <button 
                    onClick={()=>dispatch(removeFromCart(i.id))}
-                   className="py-1 px-3 border bg-red-500 text-white rounded">
+                   className="py-1 px-3 border bg-red-700 text-white rounded">
                    Remove
                     </button>
 
                    <button
                    onClick={()=>handleOrderNow(i)}
-                   className="py-1 px-3 border bg-green-500 text-white rounded"
+                   className="py-1 px-3 border bg-black text-white rounded"
                    >
                    Order
                    </button>
@@ -110,7 +117,7 @@ export default function CartPage(){
 
                 <button 
                 onClick={()=>dispatch(clearCart())} 
-                className="ml-2 py-2 px-4 border rounded bg-amber-900 text-white">
+                className="ml-2 py-2 px-4 border rounded bg-black text-white">
                 Clear
                 </button>
             </div>

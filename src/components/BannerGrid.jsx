@@ -14,15 +14,15 @@ export default function BannerGrid(){
     ];
 
     return(
-       
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
+
             {/* {img} */}
             {banners.map((b)=>(
                 <div key={b.id} className="relative w-full h-full group">
                     <img
                     src={b.img}
                     alt={`Banner ${b.id}`}
-                    className="w-full h-300 object-cover brightness-75 group-hover:brightness-90 transition-all duration-300"
+                    className="w-full  object-cover brightness-75 group-hover:brightness-90 transition-all duration-300"
                     />
 
                     {/* {text} */}

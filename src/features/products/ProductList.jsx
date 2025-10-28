@@ -4,12 +4,19 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { addOrder } from "../orders/ordersSlice";
+import { addToBag } from "../bag/bagSlice";
 
 
 export default function ProductList({products,searchTerm}){
     const dispatch = useDispatch();
     const user = useSelector(state=> state.auth.user);
     const navigate = useNavigate();
+
+   const handleAddToBag =()=>{
+    dispatch(addToBag(product));
+    toast.success("Added to Bag!")
+    navigate("/bag");
+   }
 
     const onAdd = (product) => {
       if(!user)  {
@@ -20,7 +27,7 @@ export default function ProductList({products,searchTerm}){
 
       toast.success(
             <div className="felx flex-col items-start">
-            <span className="font-bold text-white">Added to Cart!🎉</span>
+            <span className="font-bold text-white">Added to Cart!</span>
              <span className="text-sm text-white">
                     {product.name} 
                 </span>
@@ -28,7 +35,7 @@ export default function ProductList({products,searchTerm}){
             {
                 duration:2000,
                 style:{
-                    background:'#890b0bff',
+                    background:'#0fa445ff',
                     padding:'16px',
                     borderRadius:'12px'
                 },
@@ -36,72 +43,31 @@ export default function ProductList({products,searchTerm}){
         );
     };
 
-const handleOrderNow = (product)=>{
-  if(!user){
-    navigate("/auth");
-    return;
-  }
-  const order = {
-    id:Date.now(),
-    userEmail :user.email,
-    items:[
-      {
-        id:product.id,
-        name:product.name,
-        price:product.price,
-        image:product.image,
-        qty:1,
-      },
-    ],
-    total:product.price,
-    timestamp:Date.now(),
-  };
-  dispatch(addToOrder(order));
-
-  toast.success(
-      <div className="flex flex-col items-start">
-        <span className="font-bold text-white">✨ Order Placed!</span>
-        <span className="text-sm text-white">
-          {product.name} - ${product.price.toFixed(2)}
-        </span>
-      </div>,
-      {
-        duration: 2000,
-        style: {
-          background: "#136913ff",
-          padding: "16px",
-          borderRadius: "12px",
-        },
-      }
-    );
-  };
-
-
    const filteredProducts = searchTerm
    ? products.filter((p)=>
    p.name.toLowerCase().includes(searchTerm.toLowerCase())
    ):products;
 
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {products.map(p=>(
-              <div key={p.id} className="border rounded p-4 hover:shadow transition">
+              <div key={p.id} className="bg-white rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition transform duration-200 p-5 flex flex-col items-center text-center">
 
-                <Link to={`/product/${p.id}`}>
+                <Link to={`/product/${p.id}`} className="w-full">
                 <img 
                   src={p.image}
                   alt={p.name}
-                  className="w-full h-60 object-cover mb-3 rounde"
+                  className="w-full h-56 object-contain mb-4 rounded-ld"
                 />
 
-                <h3 className="text-lg font-semibold">{p.name}</h3>
-                <p className="text-blue-500 font-bold">${p.price}</p>
+                <h3 className="text-lg font-semibold text-gray-800">{p.name}</h3>
+                <p className="text-blue-600 font-bold text-base mt-1">${p.price}</p>
+                <p className="text-sm text-gray-500 mb-4">{p.category}</p>
                 </Link>
 
-                <p className="text-sm text-gray-600">{p.category}</p>
                 <button
                 onClick={()=> onAdd(p)}
-                className="mt-3 w-full py-2 bg-black text-white rounded">
+                className="mt-auto w-full py-2.5 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition">
                 Add to cart
                 </button>
               </div>

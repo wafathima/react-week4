@@ -27,6 +27,7 @@ const ordersSlice = createSlice({
             state.items = state.items.filter(i=> i.id !== action.payload);
             localStorage.setItem("orders",JSON.stringify(state.items));
         },
+           
     },
 });
 

@@ -31,13 +31,13 @@ export default function AuthPage(){
         if(loginUser.fulfilled.match(resultAction)){
             const user = resultAction.payload;
              toast.success(
-            <div className="felx flex-col items-start">
+            <div className="flex flex-col items-start">
             <span className="font-bold text-white">Login Succesfull!</span>
             </div>,
             {
                 duration:3000,
                 style:{
-                    background:'#305585ff',
+                    background:'#0a9b12ff',
                     padding:'16px',
                     borderRadius:'12px'
                 },
@@ -53,18 +53,19 @@ export default function AuthPage(){
     console.log(err);
     setMsg("Somthing went wrong")
     }
+    
     }
     return (
          <div>
             <Navbar/>
-        <div className="flex items-center justify-center h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-indigo-300">
+        <div className="flex items-center justify-center h-screen ">
             <div className="bg-white/90 backdrop-blur-lg p-10 rounded-2xl shadow-2xl w-96 border border-gray-200" >
 
             {/* {header} */}
             <div className="flex flex-col items-center mb-6">
                 <div className="flex items-center gap-2 mb-2">
-                    <LogIn className="text-blue-700 w-6 h-6"/>
-                    <h2 className="text-3xl font-bold text-blue-700">WELCOME!</h2>
+                    <LogIn className="text-gray-700 w-6 h-6"/>
+                    <h2 className="text-3xl font-bold text-gray-700">WELCOME!</h2>
                 </div>
                 <p className="text-gray-500 text-sm">Login to continue your journey</p>
             </div>
@@ -76,7 +77,7 @@ export default function AuthPage(){
                 type="email"
                 value={email}
                 onChange={(e)=> setEmail(e.target.value)}
-                className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-gray-400 focus:outline-none"
                 />
 
                 <input
@@ -84,10 +85,10 @@ export default function AuthPage(){
                 placeholder="password"
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}
-                className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-gray-400 focus:outline-none"
                 />
                 <button 
-                className="bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-lg font-semibold tracking-wide transition-transform transform hover:scale-[1.02] active:scale-[0.98]"
+                className="bg-black hover:bg-gray-600 text-white py-3 rounded-lg font-semibold tracking-wide transition-transform transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                 Login
                 </button>
@@ -101,7 +102,7 @@ export default function AuthPage(){
              {/* {footer} */}
              <div className="text-center mt-6 text-gray-600 text-sm">
                 <span>Don't have an account?</span>
-                <a href="#" className="text-blue-600 font-semibold hover:underline">Register</a>
+                <a href="/signup" className="text-blue-600 font-semibold hover:underline">Sign Up</a>
 
              </div>
             </div>

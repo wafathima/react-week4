@@ -1,16 +1,16 @@
 import { useSelector,useDispatch } from "react-redux";
 import { Link,useNavigate } from "react-router-dom";
 import {logout} from "../features/auth/authSlice";
-import {ShoppingCart,Search,ShoppingBag,Home } from "lucide-react";
+import {ShoppingCart,LogOut,User,Package,LogIn,ShoppingBag, UserPlus} from "lucide-react";
 import { useState } from "react";
 
-export default function Navbar({onSearch}){
-    const [term,setTerm]= useState("")
+export default function Navbar(){
+    const [menuOpen,setMenuOpen] = useState(false)
     const user = useSelector(state=> state.auth.user);
     const cartCount = useSelector (state=> state.cart.items.reduce((a,b)=>a+b.qty,0));
-    const [searchTerm,setSearchTerm] = useState("");
     const orderItems = useSelector((state)=>state.orders.items);
-
+    const bagItems = useSelector((state)=>state.bag?.items||[]);
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -18,95 +18,110 @@ export default function Navbar({onSearch}){
         if(user)navigate("/cart")
         else navigate("/auth");
     };
-    
-    const handleSearch = ()=>{
-        if(searchTerm.trim()){
-            navigate(`/shop?search=${searchTerm}`)
-            setTerm("");
-        }
-    }
-    const handleKeyPress = (e) =>{
-        if(e.key === "Enter"){
-            handleSearch()
-        }
-    };
 
+   const handleLogout =()=>{
+        dispatch(logout());
+        localStorage.removeItem("user");
+        navigate("/")
+    };
+    const handleLogoin = ()=>{
+        navigate("/auth");
+    }
+    
     return (
             
-        <nav className="fixed top-0 left-0 w-full bg-white shadow z-50">
-             <div className="max-w-9xl mx-auto px-9 py-5 flex justify-between items-center">
-            <Link to="/" className="font-bold text-5xl text-blue-900">⫹L I O</Link>
+        <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
+             <div className="max-w-8xl mx-auto px-9 py-5 flex justify-between items-center">
+            <Link to="/" className="flex items-center gap-2">
+            <img
+            src="/LIO (1).png"
+            alt="logo"
+            className="w-30 h-18 object-contain"
+            />
+            </Link>
           
           <div className="flex items-center gap-4">
-          {/* {home} */}
-            <button
-            onClick={()=> navigate("/")}
-            className="hover:text-blue-400 transition-color"
-            >
-              <Home size={22}/>
-            </button>
-
-        {/* {search} */}
-           <div className="flex items-center border">
-            <button
-             onClick={handleSearch}
-             className="p-2"
-             aria-label="search"
-            >
-            <Search size={22}/>
-            </button>
-    
-            <input 
-            type="text"
-            placeholder="SEARCH"
-            value={searchTerm}
-            onChange={(e)=>setSearchTerm(e.target.value)}
-            onKeyDown={handleKeyPress}
-            className=" flex-1 px-3 py-2 outline-none "
-            /> 
-              </div>
 
             {/* {cart icon} */}
             <div onClick={handleCartClick}
-            className="relative cursor-pointer hover:text-blue-400 transition-color"
+            className="relative cursor-pointer hover:text-gray-700 transition-color"
             >
             <ShoppingCart size={26} />
             {cartCount >0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white px-2 rounded-full text-xs">
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white px-2 rounded-full text-xs">
                 {cartCount}
                 </span>
             )}
          </div>
 
-         {/* {orders} */}
-         <Link to="/orders" className="relative">
-         <ShoppingBag  className="w-6 h-6 relative cursor-pointer hover:text-blue-400 transition-color"/>
-         {orderItems.length >0 &&(
-            <span className="absolute -top-2 -right-2 bg-green-500 text-white rounded-full text-xs px-2">
-            {orderItems.length}
+         {/* {bag} */}
+         <Link to="/bag" className="relative hover:text-gray-700">
+         <ShoppingBag size={26}/>
+         {bagItems.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-2 py-0.5">
+                {bagItems.length}
             </span>
          )}
          </Link>
 
-         {/* {user login&logout} */}
-         {user ?(
-            <>
-            <span className="text-sm ">Hi,{user.name}</span>
-            <button
-            onClick={()=>{
-                dispatch(logout());
-                navigate("/")
-            }}
-            className="py-2 px-3 border bg-black text-white "
-            >
-              Logout
-            </button>
-            </>
-         ):(
-            <Link to="/auth" className="py-2 px-3 border ">
-                Login 
-            </Link>
-         )}
+         {/* {{profile}} */}
+         <div className="relative">
+            <User onClick={()=>setMenuOpen(!menuOpen)}
+            className="w-6 h-6 cursor-pointer"/>
+            {menuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white border rounded-xl shadow-lg p-2 z-50">
+
+               {user ?(
+                <>
+                <button
+                onClick={()=>navigate("/profile")}
+                className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 rounded"
+                >
+                    <User className="w-4 h-4"/>
+                       Profile
+                </button>
+
+                <button
+                onClick={()=> navigate("/orders")}
+                className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 rounded"
+                >
+                <Package className="w-4 h-4"/>
+                Orders 
+                </button>
+
+                <button
+                onClick={handleLogout}
+                className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 rounded text-red-600"
+                >
+                 <LogOut className="w-4 h-4"/>
+                 Logout
+                </button>
+                </>
+
+               ):(
+
+                <>
+                <button
+                onClick={()=> navigate ("/auth")}
+                className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 rounded text-green-600"
+                >
+                 <LogIn className="w-4 h-4"/>
+                 Login 
+                </button>
+
+                <button
+                onClick={()=> navigate("/signup")}
+                 className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 rounded text-blue-600"
+                >
+                <UserPlus className="w-4 h-4"/>
+                Sign Up
+                </button>
+
+                </>
+               )}
+             </div>
+            )}
+         </div>
           </div>
           </div>
         </nav>
