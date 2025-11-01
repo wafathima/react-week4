@@ -1,114 +1,115 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import {loginUser} from "./authSlice"
-import { useNavigate,useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { loginUser } from "./authSlice";
 import toast from "react-hot-toast";
-import {LogIn} from "lucide-react";
-import Navbar from "../../components/Navbar";
+import { Eye, EyeOff, LogIn } from "lucide-react";
 
-export default function AuthPage(){
-    const [email,setEmail]= useState("");
-    const [password, setPassword] = useState("");
-    const [msg ,setMsg] = useState("");
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from || "/"
+export default function AuthPage() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user, error, status } = useSelector((state) => state.auth);
 
-    const handleSubmit = async (e) =>{
-        e.preventDefault();
-    
+  const [form, setForm] = useState({ email: "", password: "" });
+    const [showPassword, setShowPassword] = useState(false);
 
-    if(!email || !password){
-        setMsg("Please fill all required fields")
-        return;
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    dispatch(loginUser(form));
+  };
+
+  useEffect(() => {
+    if (user) {
+      toast.success(`Login successful! Welcome back, ${user.name}`);
+      if (user.role === "admin") {
+        navigate("/admin/dashboard");
+      } else {
+        navigate("/");
+      }
     }
-    try{
-        const resultAction = await dispatch(loginUser({email,password}));
+  }, [user, navigate]);
+
+  useEffect(() => {
+    if (error) toast.error(error);
+  }, [error]);
+
+  return (
+
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className="bg-white p-8 shadow-2xl rounded-2xl w-96 transform transition-all duration-300 hover:shadow-blue-200">
+        <div className="flex flex-col items-center mb-6">
+          <LogIn size={40} className="text-blue-600 mb-2" />
+          <h1 className="text-2xl font-bold text-gray-800">Welcome Back</h1>
+          <p className="text-gray-500 text-sm">Login to your account</p>
+        </div>
+
+        <form onSubmit={handleLogin} className="space-y-5">
         
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Email Address
+            </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="example@email.com"
+              value={form.email}
+              onChange={handleChange}
+              className="w-full border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none rounded-lg p-2.5 transition"
+              required
+            />
+          </div>
 
-        if(loginUser.fulfilled.match(resultAction)){
-            const user = resultAction.payload;
-             toast.success(
-            <div className="flex flex-col items-start">
-            <span className="font-bold text-white">Login Succesfull!</span>
-            </div>,
-            {
-                duration:3000,
-                style:{
-                    background:'#0a9b12ff',
-                    padding:'16px',
-                    borderRadius:'12px'
-                },
-            }
-        );
-            navigate(from,{replace:true});
-
-        }else{
-            setMsg(resultAction.payload || "Login failed")
-        }
-
-    }catch(err){
-    console.log(err);
-    setMsg("Somthing went wrong")
-    }
-    
-    }
-    return (
-         <div>
-            <Navbar/>
-        <div className="flex items-center justify-center h-screen ">
-            <div className="bg-white/90 backdrop-blur-lg p-10 rounded-2xl shadow-2xl w-96 border border-gray-200" >
-
-            {/* {header} */}
-            <div className="flex flex-col items-center mb-6">
-                <div className="flex items-center gap-2 mb-2">
-                    <LogIn className="text-gray-700 w-6 h-6"/>
-                    <h2 className="text-3xl font-bold text-gray-700">WELCOME!</h2>
-                </div>
-                <p className="text-gray-500 text-sm">Login to continue your journey</p>
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Password
+            </label>
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Enter your password"
+                value={form.password}
+                onChange={handleChange}
+                className="w-full border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none rounded-lg p-2.5 pr-10 transition"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-2.5 text-gray-500 hover:text-blue-600"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
             </div>
+          </div>
 
-            {/* {form} */}
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <input
-                placeholder="Email"
-                type="email"
-                value={email}
-                onChange={(e)=> setEmail(e.target.value)}
-                className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-gray-400 focus:outline-none"
-                />
+          
+          <button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg shadow-md transition disabled:bg-blue-300"
+            disabled={status === "loading"}
+          >
+            {status === "loading" ? "Logging in..." : "Login"}
+          </button>
+        </form>
 
-                <input
-                type="password"
-                placeholder="password"
-                value={password}
-                onChange={(e)=>setPassword(e.target.value)}
-                className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-gray-400 focus:outline-none"
-                />
-                <button 
-                className="bg-black hover:bg-gray-600 text-white py-3 rounded-lg font-semibold tracking-wide transition-transform transform hover:scale-[1.02] active:scale-[0.98]"
-                >
-                Login
-                </button>
-            </form>
-
-             {/* {message} */}
-             {msg &&(
-                <p className="text-red-500 text-center mt-3 font-medium">{msg}</p>
-             )}
-
-             {/* {footer} */}
-             <div className="text-center mt-6 text-gray-600 text-sm">
-                <span>Don't have an account?</span>
-                <a href="/signup" className="text-blue-600 font-semibold hover:underline">Sign Up</a>
-
-             </div>
-            </div>
-        </div>
-        </div>
-    );
+        <p className="mt-6 text-center text-sm text-gray-600">
+          Don't have an account?{" "}
+          <Link to="/signup" className="text-blue-600 font-medium hover:underline">
+            Sign up
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
 }
 
 

@@ -11,76 +11,86 @@ export default function BagPage(){
     const bagItems = useSelector((state)=>state.bag.items);
     const user = JSON.parse(localStorage.getItem("user"));
 
-    const handleOrder =()=>{
-        if(!user){
-            navigate("/auth")
-            return;
-        }
-        const order ={
-            id:Date.now(),
-            userEmail :user.email,
-            items:bagItems,
-            total:bagItems.reduce((acc, item) => acc + item.price * item.qty, 0),
-            timastamp: Date.now(),
-        };
+const handleOrder = async () => {
+  if (!user) {
+    toast.error("Please login to place your order");
+    navigate("/auth");
+    return;
+  }
 
-        dispatch(addOrder(order));
-        dispatch(clearBag());
+  const orderData = {
+    userId: user.id,
+    userEmail: user.email,
+    userName: user.name,
+    items: bagItems,
+    total: bagItems.reduce((acc, item) => acc + item.price * item.qty, 0),
+    status: "pending",
+    date: new Date().toISOString().split("T")[0],
+    time: new Date().toLocaleTimeString(),
+  };
 
-          const CustomToast = ({ t }) =>
-            createPortal(
-               <div
-                 className={`fixed inset-0 z-50 flex items-center justify-center pointer-events-none transition-opacity ${
-        t.visible ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      {/* Toast box only */}
-      <div className="pointer-events-auto bg-white rounded-2xl shadow-2xl p-6 flex flex-col items-center text-center border border-green-300 transition-all duration-300 transform scale-100 opacity-100">
-        <div className="bg-green-100 p-3 rounded-full mb-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-green-600"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+   dispatch(addOrder(orderData));
+   dispatch(clearBag());
+
+  await fetch("http://localhost:5001/orders", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(orderData),
+  });
+
+    const CustomToast = ({ t }) =>
+    createPortal(
+      <div
+        className={`fixed inset-0 z-50 flex items-center justify-center pointer-events-none transition-opacity ${
+          t.visible ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="pointer-events-auto bg-white rounded-2xl shadow-2xl p-6 flex flex-col items-center text-center border border-green-300 transition-all duration-300 transform scale-100 opacity-100">
+          <div className="bg-green-100 p-3 rounded-full mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8 text-green-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+
+          <h2 className="text-xl font-semibold text-green-700 mb-1">Success!</h2>
+          <p className="text-gray-600 text-sm mb-4">
+            We’ve confirmed your order and payment.
+            <br /> Thank you for shopping!
+          </p>
+
+          <button
+            onClick={() => {
+              toast.dismiss(t.id);
+              navigate("/orders");
+            }}
+            className="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
+            Go to Orders
+          </button>
         </div>
+      </div>,
+      document.body
+    );
 
-        <h2 className="text-xl font-semibold text-green-700 mb-1">Success!</h2>
-
-        <p className="text-gray-600 text-sm mb-4">
-          We’ve confirmed your order and payment.
-          <br /> Thank you for shopping!
-        </p>
-
-        <button
-          onClick={()=>{
-            toast.dismiss(t.id);
-            navigate("/orders")
-          }}
-          className="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition"
-        >
-          Go to Orders
-        </button>
-      </div>
-    </div>,
-    document.body
-  );
-            toast.custom((t)=> <CustomToast t={t}/>,{duration:3000});
-            setTimeout(()=>navigate("/orders"),1000);
-    };
+  toast.custom((t) => <CustomToast t={t} />, { duration: 3000 });
+  setTimeout(() => navigate("/orders"), 1000);
+};
 
     return (
-        
+     <div>
        <div className="p-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
-        {/* {left sec} */}
+      
         <div className="lg:col-span-2">
             <h1 className="text-3xl font-bold mb-6 text-gray-800">
             Your Bag ({bagItems.length} {bagItems.length === 1 ? "item" : "items"})
@@ -95,14 +105,14 @@ export default function BagPage(){
                         key={item.id}
                         className="flex flex-col sm:flex-row gap-4 items-center bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition p-4"
                         >
-                       {/* {img} */}
+                      
                        <img
                        src={item.image}
                        alt={item.name}
                        className="w-40 h-40 object-cover rounded-lg"
                        />
 
-                       {/* {product info} */}
+                       
                         <div className="flex-1">
                             <h3 className="font-semibold text-lg text-gray-800">
                                 {item.name}
@@ -126,7 +136,7 @@ export default function BagPage(){
                             </div>
                         </div>
 
-                        {/* {action} */}
+                       
                         <div className="flex flex-col gap-3">
                          <button
                          onClick={()=> dispatch(removeFromBag(item.id))}
@@ -140,15 +150,17 @@ export default function BagPage(){
                 </div>
             )}
         </div>
-             {/* {rigth sec} */}
+            
              {bagItems.length >0 && (
                 <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6 h-fit">
                     <h2  className="text-xl font-semibold mb-4 text-gray-800">PRICE DETAILS</h2>
 
                     <div className="space-y-3 text-gray-700">
                         <div className="flex justify-between">
-                            <span>Total Doller</span>
-                            <span>${bagItems.reduce((acc,item)=> acc + (item.price +500)* item.qty,0)}</span>
+                            <span>Total Amount</span>
+                            <span>$
+                            {bagItems.reduce((acc,item)=> acc + ( item.price +500) * item.qty,0)}
+                            </span>
                         </div>
 
                         <div className="flex justify-between">
@@ -166,7 +178,7 @@ export default function BagPage(){
                            <span>Total Amount</span>
                            <span>
                             $
-                            {bagItems.reduce((acc,item)=> acc + item.price * item.qty)}
+                            {bagItems.reduce((acc,item)=> acc + item.price * item.qty,0)}
                            </span>
                         </div>
                     </div>
@@ -179,5 +191,7 @@ export default function BagPage(){
                 </div>
              )}
        </div>
+       </div>
+        
     )
 }

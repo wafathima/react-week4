@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function FeaturesSection(){
     const navigate = useNavigate();
     return (
-        <div className="w-full py-12 flex flex-col items-center bg-gray-300">
+        <div className="w-full py-12 flex flex-col items-center bg-gray-100">
 
             {/* {view All button} */}
             <button
@@ -41,6 +41,7 @@ function FeaturesSection(){
              </div>
             </div>
         </div>
+       
     )
 }
 export default FeaturesSection;

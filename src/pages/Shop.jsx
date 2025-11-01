@@ -4,8 +4,6 @@ import { useSelector,useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { fetchProducts } from "../features/products/productsSlice";
 import ProductList from "../features/products/ProductList";
-import Navbar from "../components/Navbar";
-import Footer from "../components/footer";
 import { Navigate } from "react-router-dom";
 import { use } from "react";
 
@@ -46,8 +44,7 @@ export default function Shop(){
     }
 
     return (
-         <div>
-            <Navbar/>
+        
             <div className="p-8">
                 <h1 className="text-3xl font-bold mb-6 text-center mt-8">
                     {category? `${category}`:"All Products"}
@@ -87,8 +84,7 @@ export default function Shop(){
                 ):(
                     <p className="text-center text-gray-500 text-lg">no products found</p>
                 )}
-            </div>
-            <Footer/>
+          
          </div>
 )
 }

@@ -1,30 +1,36 @@
 import {removeFromOrder,clearOrders} from "./ordersSlice"; 
 import { useSelector,useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useEffect,useState } from "react";
+import { use, useEffect,useState } from "react";
 import axios from "axios";
-import Navbar from "../../components/Navbar";
 import toast from "react-hot-toast";
 
 export default function OrdersPage(){
     const user = useSelector((state)=>state.auth.user);
-    const orders = useSelector((state)=>state.orders.items)
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    const [orders,setOrders]= useState([])
     const [confirmedOreders,  setConfirmedOrders] = useState([])
 
    
     useEffect(()=>{
-        if(!user) navigate("/auth");
-    },[user,navigate]);
 
-    if (!user)return null;
+    if (!user)return ;
+
+    fetch("http://localhost:5001/orders")
+    .then((res)=>res.json())
+    .then((data)=>{
+        const userOrders = data.filter(
+            (order)=> order.userEmail === user.email || order.userId === user.id
+        );
+        setOrders(userOrders)
+    })
+    .catch((err)=> console.error("error loading orders:",err))
+      },[user])
 
     if(!orders || orders.length === 0 ) {
         return (
         <div className="min-h-screen flex flex-col">
-        <Navbar/>
         <div className="flex-grow p-10 text-center text-lg text-gray-600">
         No Orders yet.!
          </div>
@@ -34,7 +40,6 @@ export default function OrdersPage(){
  
     return (
         <div className="min-h-screen flex flex-col">
-            <Navbar/>
             <div className="flex-grow container mx-auto p-6">
                 <h1 className="text-3xl font-bold mb-6 mt-7 ">Your Orders</h1>
 
@@ -78,7 +83,7 @@ export default function OrdersPage(){
                                     <div className="flex-1">
                                         <p className="font-medium">{item.name || "Unknown Product"}</p>
                                         <p className="text-sm text-gray-600">
-                                            ${item.price?.toFixed(2)}*{item.qty}
+                                            ${Number(item.price || 0).toFixed(2)}*{item.qty}
                                         </p>
                                     </div>
                                 </div>
@@ -99,7 +104,3 @@ export default function OrdersPage(){
 
 
                 
-                
-    
-
-

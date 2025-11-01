@@ -1,15 +1,13 @@
 import { useSelector,useDispatch } from "react-redux";
 import { removeFromOrder,clearOrders } from "../features/orders/ordersSlice";
-import Navbar from "../components/Navbar";
-import Footer from "../components/footer";
 
 export default function checkoutPage(){
-     const order = useSelector((state)=>state.orders.items);
+     const orders = useSelector((state)=>state.orders.items);
      const dispatch = useDispatch();
 
      return (
-        <div>
-            <Navbar/>
+        
+           
             <div  className="p-8 max-w-5xl mx-auto">
              <h1 className="text-3xl font-bold mb-6 text-center">My Orders</h1>
 
@@ -26,7 +24,8 @@ export default function checkoutPage(){
                         >
                     <div className="flex justify-between items-center mb-4">
                     <h2 className="text-xl font-semibold">Order #{order.id}</h2>
-                    <p className="text-sm text-gray-500">{order.date}</p>
+                    <p className="text-sm text-gray-500">
+                        {new Date(order.timestamp || order.date).toLocaleString()}</p>
                     </div>
                     <ul className="space-y-3">
                         {order.items.map((item)=>(
@@ -58,15 +57,14 @@ export default function checkoutPage(){
                     ))}
                    <button
                    onClick={()=>dispatch(clearOrders())}
-                   className="mt-6 bg-black text-white px-6 py-2 rounded-xl hover-bg-gray-800"
+                   className="mt-6 bg-black text-white px-6 py-2 rounded-xl hover:bg-gray-800"
                    >
                     Clear All
                    </button>
                 </div>
              )} 
               </div>
-              <Footer/>
-            </div>
+             
       
      )
 }

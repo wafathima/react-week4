@@ -27,13 +27,17 @@ const ordersSlice = createSlice({
             state.items = state.items.filter(i=> i.id !== action.payload);
             localStorage.setItem("orders",JSON.stringify(state.items));
         },
+        updateOrderStatus: (state, action) => {
+        const { id, status } = action.payload;
+         const order = state.items.find(o => o.id === id);
+        if (order) order.status = status;
+     },
            
     },
 });
 
-export const {addOrder , clearOrders,removeFromOrder} = ordersSlice.actions;
+export const { addOrder, removeFromOrder, clearOrders, updateOrderStatus } = ordersSlice.actions;
+
 export default ordersSlice.reducer;
-
-
 
 

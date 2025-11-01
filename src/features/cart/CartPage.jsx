@@ -2,8 +2,6 @@ import { useSelector,useDispatch } from "react-redux";
 import { removeFromCart,setQty,clearCart } from "./cartSlice";
 import axios from "axios";
 import toast from "react-hot-toast";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/footer";
 import { addOrder } from "../orders/ordersSlice";
 
 export default function CartPage(){
@@ -65,7 +63,7 @@ export default function CartPage(){
 
     return (
         <div>
-            <Navbar/>
+           
         <div className="p-8">
         <h1 className="text-4xl font-bold mb-4 mt-7">Your Cart</h1>
 
